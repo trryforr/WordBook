@@ -1,1 +1,161 @@
+{
+  "meta": {
+    "title": "My Vocabulary Book",
+    "subtitle": "শব্দ ভান্ডার",
+    "description": "English vocabulary with Bangla meanings",
+    "version": "1.0",
+    "lastUpdated": "2025-01-01"
+  },
+  "sections": [
+    {
+      "id": "sec_foreword",
+      "name": "Foreword Vocabs",
+      "desc": "Vocabulary from the Foreword",
+      "color": "#1e3a5f"
+    },
+    {
+      "id": "sec_preface",
+      "name": "Preface Vocabs",
+      "desc": "Vocabulary from the Preface",
+      "color": "#3d6b4e"
+    }
+  ],
+  "words": [
+    {
+      "id": "w001",
+      "word": "Privilege",
+      "pos": "n",
+      "posLabel": "Noun",
+      "bangla": "বিশেষ সুবিধা; অধিকার",
+      "pronounce": "/ˈprɪvəlɪdʒ/",
+      "denotation": "A special right or advantage granted to a particular person or group.",
+      "synonym": { "en": "advantage", "bn": "সুবিধা" },
+      "antonym": { "en": "disadvantage", "bn": "অসুবিধা" },
+      "hypernym": "right",
+      "hyponym": "exclusive privilege",
+      "collocations": ["enjoy privileges", "grant a privilege", "special privilege"],
+      "sectionId": "sec_foreword"
+    },
+    {
+      "id": "w002",
+      "word": "Stir",
+      "pos": "v",
+      "posLabel": "Verb / Noun",
+      "bangla": "নাড়া; আলোড়ন তোলা",
+      "pronounce": "/stɜːr/",
+      "denotation": "To move a substance with circular motion; to evoke a strong reaction.",
+      "synonym": { "en": "mix", "bn": "নাড়া" },
+      "antonym": { "en": "calm", "bn": "শান্ত করা" },
+      "hypernym": "movement",
+      "hyponym": "stir up",
+      "collocations": ["stir the soup", "create a stir", "stir up trouble"],
+      "sectionId": "sec_foreword"
+    },
+    {
+      "id": "w003",
+      "word": "Disservice",
+      "pos": "n",
+      "posLabel": "Noun",
+      "bangla": "ক্ষতি; অকল্যাণ",
+      "pronounce": "/dɪsˈsɜːrvɪs/",
+      "denotation": "An action that harms or disadvantages someone unintentionally.",
+      "synonym": { "en": "harm", "bn": "ক্ষতি" },
+      "antonym": { "en": "service", "bn": "সেবা" },
+      "hypernym": "action",
+      "hyponym": "misleading information",
+      "collocations": ["do a disservice", "great disservice"],
+      "sectionId": "sec_foreword"
+    },
+    {
+      "id": "w004",
+      "word": "Intimidate",
+      "pos": "v",
+      "posLabel": "Verb",
+      "bangla": "ভয় দেখানো; হুমকি দেওয়া",
+      "pronounce": "/ɪnˈtɪmɪdeɪt/",
+      "denotation": "To frighten or overawe someone so as to make them do what one wants.",
+      "synonym": { "en": "threaten", "bn": "হুমকি দেওয়া" },
+      "antonym": { "en": "encourage", "bn": "উৎসাহিত করা" },
+      "hypernym": "influence",
+      "hyponym": "bully",
+      "collocations": ["intimidate witnesses", "feel intimidated"],
+      "sectionId": "sec_foreword"
+    },
+    {
+      "id": "w005",
+      "word": "Obscure",
+      "pos": "adj",
+      "posLabel": "Adjective / Verb",
+      "bangla": "অস্পষ্ট; অস্বচ্ছ",
+      "pronounce": "/əbˈskjʊər/",
+      "denotation": "Not clear or easy to understand; not discovered or known about.",
+      "synonym": { "en": "unclear", "bn": "অস্পষ্ট" },
+      "antonym": { "en": "clear", "bn": "স্পষ্ট" },
+      "hypernym": "difficulty",
+      "hyponym": "obscure reference",
+      "collocations": ["obscure meaning", "obscure the truth"],
+      "sectionId": "sec_preface"
+    },
+    {
+      "id": "w006",
+      "word": "Convoluted",
+      "pos": "adj",
+      "posLabel": "Adjective",
+      "bangla": "জটিল; পাকানো",
+      "pronounce": "/ˈkɒnvəluːtɪd/",
+      "denotation": "Extremely complex and difficult to follow.",
+      "synonym": { "en": "complex", "bn": "জটিল" },
+      "antonym": { "en": "simple", "bn": "সহজ" },
+      "hypernym": "complexity",
+      "hyponym": "convoluted argument",
+      "collocations": ["convoluted argument", "convoluted reasoning"],
+      "sectionId": "sec_preface"
+    },
+    {
+      "id": "w007",
+      "word": "Tangible",
+      "pos": "adj",
+      "posLabel": "Adjective",
+      "bangla": "স্পর্শযোগ্য; বাস্তব",
+      "pronounce": "/ˈtændʒəbl/",
+      "denotation": "Perceptible by touch; clear and definite; real.",
+      "synonym": { "en": "palpable", "bn": "স্পষ্ট" },
+      "antonym": { "en": "intangible", "bn": "অস্পর্শযোগ্য" },
+      "hypernym": "perceptible",
+      "hyponym": "tangible asset",
+      "collocations": ["tangible evidence", "tangible benefits"],
+      "sectionId": "sec_preface"
+    },
+    {
+      "id": "w008",
+      "word": "Invariants",
+      "pos": "n",
+      "posLabel": "Noun",
+      "bangla": "অপরিবর্তনীয় শর্ত; ধ্রুবক",
+      "pronounce": "/ɪnˈveəriənts/",
+      "denotation": "Conditions or properties that remain unchanged throughout a process.",
+      "synonym": { "en": "constant", "bn": "ধ্রুবক" },
+      "antonym": { "en": "variable", "bn": "পরিবর্তনশীল" },
+      "hypernym": "property",
+      "hyponym": "loop invariant",
+      "collocations": ["maintain invariants", "loop invariant"],
+      "sectionId": "sec_preface"
+    },
+    {
+      "id": "w009",
+      "word": "Stuck",
+      "pos": "adj",
+      "posLabel": "Adjective",
+      "bangla": "আটকে যাওয়া; ফেঁসে যাওয়া",
+      "pronounce": "/stʌk/",
+      "denotation": "Unable to move, progress, or escape from a situation.",
+      "synonym": { "en": "trapped", "bn": "আটকে পড়া" },
+      "antonym": { "en": "free", "bn": "মুক্ত" },
+      "hypernym": "immobility",
+      "hyponym": "stuck in traffic",
+      "collocations": ["stuck in traffic", "stuck on a problem"],
+      "sectionId": "sec_preface"
+    }
+  ]
+}
 
