@@ -1,0 +1,458 @@
+{
+  "meta": {
+    "id": "ssc-english-1st",
+    "title": "SSC English 1st Paper",
+    "subtitle": "সম্পূর্ণ শব্দভান্ডার",
+    "author": "WordBook Editorial",
+    "icon": "📘",
+    "coverImage": "",
+    "accentColor": "#1e3a5f",
+    "accentLight": "#e8f0fa",
+    "welcome": "Master every word from SSC English 1st Paper — with deep meaning layers, semantic maps, and active recall quizzes.",
+    "targetExam": "SSC",
+    "language": "en-bn",
+    "quizEnabled": true,
+    "ttsEnabled": true,
+    "searchEnabled": true,
+    "version": "1.0.0",
+    "exportedAt": "2025-01-01T00:00:00Z"
+  },
+  "parts": [
+    {
+      "id": "p1",
+      "type": "orientation",
+      "title": "Orientation",
+      "subtitle": "How to use this book",
+      "icon": "🧭",
+      "content": {
+        "howToUse": "Start with any Unit that matches your current lesson. Read the Text Summary first, then study each Word Card deeply. Use the Quiz after every lesson.",
+        "howWordsWork": "Every word has multiple layers — literal meaning, contextual meaning, and connotation. Understanding all three is what separates good students from great ones."
+      }
+    },
+    {
+      "id": "p2",
+      "type": "units",
+      "title": "Unit-wise Lexical Study",
+      "subtitle": "All 16 Units of SSC English 1st Paper",
+      "icon": "📚",
+      "units": [
+        {
+          "id": "u1",
+          "number": 1,
+          "title": "Sense of Self",
+          "themeOverview": {
+            "centralIdea": "How identity is constructed through social class, economic status, and personal relationships.",
+            "culturalMeaning": "In rural Bangladesh, identity is deeply tied to family legacy, economic standing, and community relationships.",
+            "moralLesson": "Our sense of self is not fixed — it is shaped by who we love, what we lose, and how we respond to life's changes."
+          },
+          "semanticFields": [
+            {
+              "id": "sf1",
+              "title": "SENSE OF SELF",
+              "coreField": [
+                "identity",
+                "society",
+                "economy",
+                "education",
+                "factors"
+              ],
+              "subFields": [
+                {
+                  "name": "Social Stratification",
+                  "words": [
+                    "segregate",
+                    "classes",
+                    "status",
+                    "identities"
+                  ]
+                },
+                {
+                  "name": "Rural Domesticity",
+                  "words": [
+                    "bazaar",
+                    "veranda",
+                    "coop",
+                    "husks",
+                    "rattan basket",
+                    "earthen bowl"
+                  ]
+                },
+                {
+                  "name": "Human-Animal Bonds",
+                  "words": [
+                    "inter-relate",
+                    "maternal",
+                    "cockerel",
+                    "bond",
+                    "stubbornness"
+                  ]
+                },
+                {
+                  "name": "Conflict & Isolation",
+                  "words": [
+                    "war",
+                    "training",
+                    "captivity",
+                    "grave",
+                    "grief",
+                    "motionless"
+                  ]
+                }
+              ]
+            }
+          ],
+          "lessons": [
+            {
+              "id": "l1",
+              "number": 1,
+              "title": "Mr. Moti",
+              "summary": "Sonabhan, a widow in rural Bangladesh, struggles with the departure of her stubborn son Ameen, who decides to join the war. To cope with her loneliness, she develops a deep maternal bond with her cockerel, Moti, whom she protects from the local cockfighting culture. The story illustrates how identity is shaped by economic status and personal relationships. After Ameen leaves, Moti is tragically killed by a predator, leaving Sonabhan in profound isolation. The narrative ends with Sonabhan burying the bird beside her husband's grave, overwhelmed by a motionless grief.",
+              "keyIdeas": {
+                "theme": "Sense of Self and the construction of identity through social class and emotional bonds.",
+                "message": "Human existence finds meaning through care for others, and the loss of these connections leads to a total loss of self.",
+                "tone": "Somber, realistic, and deeply empathetic."
+              },
+              "vocabularyExtraction": [
+                "Economy",
+                "Education",
+                "Identity",
+                "Segregate",
+                "Inter-relate",
+                "Stubborn",
+                "Forlorn",
+                "Captivity",
+                "Crucify",
+                "Motionless",
+                "Grief"
+              ],
+              "wordCategories": {
+                "nouns": [
+                  "Identity",
+                  "Economy",
+                  "Society",
+                  "Veranda",
+                  "Bazaar",
+                  "Captivity",
+                  "Grave",
+                  "Grief"
+                ],
+                "verbs": [
+                  "Segregate",
+                  "Shriek",
+                  "Assure",
+                  "Suppress",
+                  "Fascinate",
+                  "Crucify",
+                  "Plod"
+                ],
+                "adjectives": [
+                  "Stubborn",
+                  "Earthen",
+                  "Puffy",
+                  "Cloudy",
+                  "Kingly",
+                  "Forlorn",
+                  "Motionless"
+                ],
+                "adverbs": [
+                  "Soon",
+                  "Barely",
+                  "Alone",
+                  "Sometimes",
+                  "Never",
+                  "Silently"
+                ]
+              },
+              "contextualUsage": [
+                {
+                  "word": "Crucify",
+                  "usage": "\"His forlorn captivity crucifies her\"",
+                  "explanation": "The author chooses 'crucify' instead of 'hurts' to convey an extreme, sacrificial level of mental suffering. It suggests Sonabhan feels Moti's pain as her own physical torture, emphasizing their deep spiritual bond."
+                },
+                {
+                  "word": "Stubborn",
+                  "usage": "\"...he was crazy about bullfighting and very stubborn\"",
+                  "explanation": "Used to link Ameen's identity to his dead father, showing that personality traits are part of inherited legacy and Sense of Self."
+                }
+              ],
+              "semanticNetwork": {
+                "relatedWords": [
+                  "Widow",
+                  "Son",
+                  "Husband",
+                  "Alone",
+                  "Grief",
+                  "Grave"
+                ],
+                "opposites": [
+                  {
+                    "word1": "Segregate",
+                    "meaning1": "Divide",
+                    "word2": "Inter-relate",
+                    "meaning2": "Connect"
+                  },
+                  {
+                    "word1": "Kingly",
+                    "meaning1": "Noble (Moti)",
+                    "word2": "Forlorn",
+                    "meaning2": "Abandoned (Moti in cage)"
+                  }
+                ],
+                "fieldOfMeaning": "Socio-Economic Struggle",
+                "fieldWords": [
+                  "Economy",
+                  "Education",
+                  "Factors",
+                  "Bazaar",
+                  "Classes"
+                ]
+              },
+              "practice": [
+                {
+                  "type": "fill_blank",
+                  "question": "Economy and _________ are two major factors that _________ people in a society.",
+                  "answers": [
+                    "Education",
+                    "segregate"
+                  ],
+                  "hint": "Think about what divides social classes"
+                },
+                {
+                  "type": "sentence_making",
+                  "instruction": "Use the words 'Motionless' and 'Identity' to describe Sonabhan's feelings after Moti's death.",
+                  "sampleAnswer": "Sonabhan sat motionless, her identity stripped away with the loss of the only bond that gave her life meaning."
+                },
+                {
+                  "type": "paraphrase",
+                  "original": "He has reached the height of his dead father, as well as his stubbornness.",
+                  "instruction": "Rewrite this sentence in your own words.",
+                  "sampleAnswer": "He had grown to be as tall as his late father, and had also inherited his father's rigid, unyielding personality."
+                }
+              ],
+              "words": [
+                {
+                  "id": "w1",
+                  "number": 1,
+                  "word": "Supper",
+                  "pos": "n",
+                  "posLabel": "Noun",
+                  "pronunciation": "/ˈsʌp.ər/",
+                  "bangla": "রাতের খাবার",
+                  "academicDefinition": "A light or informal evening meal.",
+                  "meaningLayers": {
+                    "literal": "A meal eaten in the evening.",
+                    "contextual": "The final meal Sonabhan shares with her son before his departure, marked by tension and silence.",
+                    "connotation": "Domestic, routine, but in this context, heavy with unspoken emotion."
+                  },
+                  "lexicalRelations": {
+                    "synonyms": [
+                      "Dinner",
+                      "Evening meal"
+                    ],
+                    "antonyms": [],
+                    "hypernym": "Meal",
+                    "hyponyms": [
+                      "Candlelight supper",
+                      "Working supper"
+                    ]
+                  },
+                  "morphology": {
+                    "root": "Souper (Old French: to eat the evening meal)",
+                    "derivatives": [
+                      "Suppertime",
+                      "Supper table"
+                    ],
+                    "forms": {
+                      "noun": "Supper",
+                      "verb": "—",
+                      "adjective": "—"
+                    }
+                  },
+                  "collocations": [
+                    "Finish your supper",
+                    "Cook supper",
+                    "Hot supper",
+                    "Light supper"
+                  ],
+                  "usageInLesson": {
+                    "originalSentence": "She asks Ameen to finish his supper.",
+                    "explanation": "Used to show the mother's attempt to maintain routine despite the life-changing news she just received."
+                  },
+                  "exampleSentences": [
+                    "The family gathered around the wooden table for a quiet supper.",
+                    "After a long day of work, a warm supper was exactly what he needed.",
+                    "She prepared a simple supper of rice and lentils for her son."
+                  ],
+                  "cognitiveImage": "A steaming bowl of food on a table under a dim light at night, with a mother watching her son eat in silence.",
+                  "commonErrors": [
+                    {
+                      "error": "Confusion with 'Dinner'",
+                      "explanation": "Supper is typically lighter or more informal; dinner is often the main meal of the day."
+                    }
+                  ]
+                },
+                {
+                  "id": "w2",
+                  "number": 2,
+                  "word": "Forlorn",
+                  "pos": "adj",
+                  "posLabel": "Adjective",
+                  "pronunciation": "/fəˈlɔːrn/",
+                  "bangla": "একাকী ও দুঃখী; পরিত্যক্ত",
+                  "academicDefinition": "Appearing sad and abandoned; having little hope of success.",
+                  "meaningLayers": {
+                    "literal": "Lonely and sad, as if abandoned.",
+                    "contextual": "Describes Moti's state in captivity — stripped of freedom and dignity.",
+                    "connotation": "Deep hopelessness. The word carries a weight of irreversible loss."
+                  },
+                  "lexicalRelations": {
+                    "synonyms": [
+                      "Desolate",
+                      "Abandoned",
+                      "Wretched"
+                    ],
+                    "antonyms": [
+                      "Cheerful",
+                      "Hopeful",
+                      "Thriving"
+                    ],
+                    "hypernym": "Sad",
+                    "hyponyms": []
+                  },
+                  "morphology": {
+                    "root": "Old English 'forloren' — completely lost",
+                    "derivatives": [
+                      "Forlornly (adv)",
+                      "Forlornness (n)"
+                    ],
+                    "forms": {
+                      "adjective": "Forlorn",
+                      "adverb": "Forlornly",
+                      "noun": "Forlornness"
+                    }
+                  },
+                  "collocations": [
+                    "Forlorn hope",
+                    "Forlorn look",
+                    "Forlorn figure",
+                    "Forlorn cry"
+                  ],
+                  "usageInLesson": {
+                    "originalSentence": "His forlorn captivity crucifies her.",
+                    "explanation": "The adjective 'forlorn' modifies Moti's captivity to show it is not just physical confinement but emotional devastation — for both Moti and Sonabhan."
+                  },
+                  "exampleSentences": [
+                    "The forlorn child stood at the gate waiting for parents who never came.",
+                    "She gave a forlorn glance at the empty chair where her husband used to sit.",
+                    "The abandoned house had a forlorn, forgotten quality about it."
+                  ],
+                  "cognitiveImage": "A bird in a small cage, sitting still, feathers dull, looking out through the bars at the open sky.",
+                  "commonErrors": [
+                    {
+                      "error": "Confusing 'forlorn' with just 'sad'",
+                      "explanation": "'Forlorn' implies abandonment and hopelessness — it is much stronger and more specific than simply 'sad'."
+                    }
+                  ]
+                },
+                {
+                  "id": "w3",
+                  "number": 3,
+                  "word": "Crucify",
+                  "pos": "v",
+                  "posLabel": "Verb",
+                  "pronunciation": "/ˈkruː.sɪ.faɪ/",
+                  "bangla": "ক্রুশে বিদ্ধ করা; তীব্র যন্ত্রণা দেওয়া",
+                  "academicDefinition": "To put someone to death by nailing them to a cross; figuratively, to cause extreme mental or emotional suffering.",
+                  "meaningLayers": {
+                    "literal": "To execute by nailing to a cross.",
+                    "contextual": "Used figuratively — Moti's suffering causes Sonabhan unbearable pain, as if she herself is being tortured.",
+                    "connotation": "Extreme, sacrificial suffering. Implies a spiritual or martyr-like dimension to the pain."
+                  },
+                  "lexicalRelations": {
+                    "synonyms": [
+                      "Torment",
+                      "Torture",
+                      "Persecute"
+                    ],
+                    "antonyms": [
+                      "Comfort",
+                      "Soothe",
+                      "Relieve"
+                    ],
+                    "hypernym": "Punish",
+                    "hyponyms": []
+                  },
+                  "morphology": {
+                    "root": "Latin 'crucifigere' — crux (cross) + figere (to fix)",
+                    "derivatives": [
+                      "Crucifixion (n)",
+                      "Crucified (adj/past)",
+                      "Crucifier (n)"
+                    ],
+                    "forms": {
+                      "verb": "Crucify",
+                      "noun": "Crucifixion",
+                      "adjective": "Crucified",
+                      "pastTense": "Crucified"
+                    }
+                  },
+                  "collocations": [
+                    "Crucify someone mentally",
+                    "Crucified by guilt",
+                    "Crucified by grief"
+                  ],
+                  "usageInLesson": {
+                    "originalSentence": "His forlorn captivity crucifies her.",
+                    "explanation": "The author deliberately uses this extreme verb to show the depth of Sonabhan's empathy — she does not merely feel sorry; she feels physically destroyed by Moti's suffering."
+                  },
+                  "exampleSentences": [
+                    "The guilt of abandoning his family crucified him for the rest of his life.",
+                    "She was crucified by the knowledge that she could have prevented the accident.",
+                    "The media crucified the politician for his dishonest statements."
+                  ],
+                  "cognitiveImage": "A person pressing both hands to their chest, face contorted in pain, as if absorbing someone else's suffering into their own body.",
+                  "commonErrors": [
+                    {
+                      "error": "Using only in literal/religious sense",
+                      "explanation": "In modern English, 'crucify' is commonly used figuratively to mean extreme emotional torment or harsh public criticism."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "type": "thematic",
+      "title": "Thematic Vocabulary Index",
+      "subtitle": "Words grouped by theme across all units",
+      "icon": "🗂️",
+      "themes": [
+        "Education",
+        "Environment",
+        "Technology",
+        "Society",
+        "Values",
+        "Identity",
+        "Nature"
+      ]
+    },
+    {
+      "id": "p4",
+      "type": "grammar",
+      "title": "Functional Grammar & Usage",
+      "subtitle": "Collocations, word formation, register, idioms",
+      "icon": "⚙️"
+    },
+    {
+      "id": "p5",
+      "type": "practice",
+      "title": "Practice & Mastery",
+      "subtitle": "Exercises, MCQ, contextual writing",
+      "icon": "✏️"
+    }
+  ]
+}
