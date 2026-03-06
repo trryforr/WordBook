@@ -1,0 +1,15 @@
+{
+  "books": [
+    {
+      "id": "ssc-english-1st",
+      "file": "data/ssc-english-1st.json",
+      "title": "SSC English 1st Paper",
+      "subtitle": "সম্পূর্ণ শব্দভান্ডার",
+      "icon": "📘",
+      "accentColor": "#1e3a5f",
+      "targetExam": "SSC",
+      "wordCount": 3,
+      "unitCount": 1
+    }
+  ]
+}
