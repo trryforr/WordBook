@@ -2,715 +2,1991 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WordBook — শব্দ ভান্ডার | English Vocabulary with Bangla Meanings</title>
-
-<!-- ═══ SEO: Core Meta ═══ -->
-<meta name="description" content="VocabBook — A rich English vocabulary reference with Bangla meanings, pronunciations, synonyms, antonyms, collocations, and active-recall quiz mode. Perfect for Bangladeshi students and learners.">
-<meta name="keywords" content="English vocabulary, Bangla meaning, English to Bangla dictionary, vocab quiz, word meanings, synonyms antonyms, শব্দ ভান্ডার, ইংরেজি শব্দ, বাংলা অর্থ, vocabulary book">
-<meta name="author" content="VocabBook">
-<meta name="robots" content="index, follow">
-<meta name="language" content="English, Bengali">
-<link rel="canonical" href="https://YOUR-DOMAIN.com/">
-
-<!-- ═══ Open Graph ═══ -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://YOUR-DOMAIN.com/">
-<meta property="og:title" content="VocabBook — English Vocabulary with Bangla Meanings">
-<meta property="og:description" content="Learn English vocabulary with Bangla meanings, pronunciations, synonyms, antonyms, collocations and quiz mode. শব্দ ভান্ডার — your personal vocabulary companion.">
-<meta property="og:image" content="https://YOUR-DOMAIN.com/og-cover.png">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="bn_BD">
-<meta property="og:site_name" content="VocabBook">
-
-<!-- ═══ Twitter Card ═══ -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="VocabBook — English Vocabulary with Bangla Meanings">
-<meta name="twitter:description" content="Learn English words with Bangla meanings, quiz mode, and pronunciation. শব্দ ভান্ডার.">
-<meta name="twitter:image" content="https://YOUR-DOMAIN.com/og-cover.png">
-
-<!-- ═══ JSON-LD Structured Data ═══ -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "VocabBook — শব্দ ভান্ডার",
-  "description": "A personal English vocabulary reference book with Bangla meanings, active-recall quiz mode, text-to-speech, synonyms, antonyms, and collocations.",
-  "url": "https://YOUR-DOMAIN.com/",
-  "applicationCategory": "EducationApplication",
-  "operatingSystem": "Web Browser",
-  "inLanguage": ["en", "bn"],
-  "audience": { "@type": "EducationalAudience", "educationalRole": "student" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "featureList": ["Active Recall Quiz Mode", "Text-to-Speech", "Bangla Meanings", "Synonym & Antonym", "Collocations", "POS Filtering"]
-}
-</script>
-
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<title>WordBook</title>
+<meta name="description" content="Deep vocabulary learning for SSC & HSC students — Bengali meanings, semantic maps, active recall quizzes.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600;1,700&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ════════════════════════════════════════
-   DESIGN TOKENS
-════════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   DESIGN SYSTEM — Refined Academic Dark
+   ══════════════════════════════════════════ */
 :root {
-  --bg:#f9f6f0; --surface:#ffffff; --surface2:#f3ede3;
-  --border:#e5ddd0; --border2:#d4c9b8;
-  --ink:#1a150e; --ink2:#3b3025; --muted:#8a7e6e; --faint:#b5a99a;
-  --gold:#b8813a; --gold2:#d4a055; --gold-pale:#fdf4e7; --gold-dim:rgba(184,129,58,.12);
-  --rust:#9b3d22; --sage:#3d6b4e; --cobalt:#1e3a5f; --violet:#4a2d7a;
-  --dk-bg:#0c1018; --dk-surface:#111827; --dk-card:#1a2332;
-  --dk-border:#243347; --dk-border2:#2f4160;
-  --dk-text:#e8eef8; --dk-muted:#637da0; --dk-faint:#3a5070;
-  --dk-accent:#4a9eff; --dk-amber:#f0a030; --dk-green:#34c77c; --dk-red:#f07070;
-  --font-serif:'Fraunces',Georgia,serif;
-  --font-sans:'DM Sans',system-ui,sans-serif;
-  --font-mono:'JetBrains Mono',monospace;
-  --font-bn:'Noto Sans Bengali',sans-serif;
-  --r-sm:6px; --r-md:10px; --r-lg:16px; --r-xl:22px;
-  --t:0.18s cubic-bezier(0.4,0,0.2,1);
-  --t-spring:0.35s cubic-bezier(0.34,1.56,0.64,1);
+  --bg:       #0d1117;
+  --bg2:      #161b22;
+  --bg3:      #1c2128;
+  --bg4:      #21262d;
+  --surf:     #1c2128;
+  --surf2:    #242b33;
+  --bd:       #30363d;
+  --bd2:      #3d444d;
+
+  --tx:       #e6edf3;
+  --tx2:      #adbac7;
+  --tx3:      #768390;
+  --tx4:      #545d68;
+
+  --ac:       #2f81f7;
+  --ac2:      #58a6ff;
+  --ac-g:     rgba(47,129,247,.12);
+  --ac-gb:    rgba(47,129,247,.06);
+
+  --gold:     #d4a017;
+  --gold2:    #f0c040;
+  --gold-g:   rgba(212,160,23,.12);
+
+  --grn:      #3fb950;
+  --grn-g:    rgba(63,185,80,.1);
+  --red:      #f85149;
+  --red-g:    rgba(248,81,73,.1);
+  --amb:      #d29922;
+  --pur:      #a371f7;
+  --pur-g:    rgba(163,113,247,.1);
+  --teal:     #39d353;
+
+  --ff: 'Playfair Display', Georgia, serif;
+  --fn: 'Sora', sans-serif;
+  --fm: 'JetBrains Mono', monospace;
+  --fb: 'Noto Sans Bengali', sans-serif;
+
+  --r4: 4px; --r8: 8px; --r12: 12px;
+  --r16: 16px; --r20: 20px; --r24: 24px;
+  --t: .15s ease;
+  --t2: .25s ease;
 }
+
+/* ── RESET ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:16px;scroll-behavior:smooth}
-body{font-family:var(--font-sans);background:var(--bg);color:var(--ink);overflow-x:hidden;min-height:100vh;-webkit-font-smoothing:antialiased}
-button{cursor:pointer;font-family:inherit}
-input,textarea,select{font-family:inherit}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:var(--fn);background:var(--bg);color:var(--tx);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button{cursor:pointer;font-family:inherit;border:none;background:none;color:inherit}
+a{color:inherit;text-decoration:none}
+input,select,textarea{font-family:inherit}
+img{display:block;max-width:100%}
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:4px}
 
-/* ─── Loading Screen ─── */
-#loadScreen {
-  position:fixed;inset:0;background:var(--dk-bg);
+/* ── UTILITY ── */
+.hide{display:none!important}
+.bn{font-family:var(--fb)}
+.mono{font-family:var(--fm)}
+.serif{font-family:var(--ff)}
+
+/* ══ LOADING SCREEN ══ */
+#loadScr{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--bg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+  transition:opacity .5s ease;
+}
+.ld-logo{
+  width:72px;height:72px;border-radius:20px;
+  background:linear-gradient(135deg,var(--ac),var(--pur));
+  display:flex;align-items:center;justify-content:center;
+  font-size:2rem;
+  box-shadow:0 0 40px rgba(47,129,247,.3);
+  animation:ldpulse 2s ease-in-out infinite;
+}
+@keyframes ldpulse{0%,100%{box-shadow:0 0 40px rgba(47,129,247,.3)}50%{box-shadow:0 0 60px rgba(47,129,247,.5)}}
+.ld-title{font-family:var(--ff);font-size:1.6rem;font-weight:700;color:var(--tx)}
+.ld-sub{font-size:.78rem;color:var(--tx3);font-family:var(--fm);letter-spacing:.08em}
+.ld-bar{width:200px;height:2px;background:var(--bd);border-radius:99px;overflow:hidden;margin-top:8px}
+.ld-fill{height:100%;background:linear-gradient(90deg,var(--ac),var(--pur));border-radius:99px;animation:ldfill 1.6s ease-in-out infinite}
+@keyframes ldfill{0%{width:0;margin-left:0}50%{width:75%;margin-left:12.5%}100%{width:0;margin-left:100%}}
+
+/* ══ BOOK SELECTOR ══ */
+#bookSelector{
+  position:fixed;inset:0;z-index:900;
+  background:var(--bg);
+  display:flex;flex-direction:column;
+  overflow-y:auto;
+}
+.bs-header{
+  padding:48px 24px 32px;text-align:center;
+  background:radial-gradient(ellipse at 50% 0%,rgba(47,129,247,.08) 0%,transparent 70%);
+  border-bottom:1px solid var(--bd);
+}
+.bs-logo{
+  width:56px;height:56px;border-radius:16px;
+  background:linear-gradient(135deg,var(--ac),var(--pur));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;margin:0 auto 16px;
+  box-shadow:0 8px 32px rgba(47,129,247,.25);
+}
+.bs-title{font-family:var(--ff);font-size:2rem;font-weight:900;color:var(--tx);margin-bottom:6px}
+.bs-sub{font-size:.83rem;color:var(--tx3)}
+.bs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;padding:32px 24px;max-width:960px;margin:0 auto;width:100%}
+.bcard{
+  background:var(--surf);border:1px solid var(--bd);border-radius:var(--r16);
+  padding:22px;cursor:pointer;transition:all var(--t2);
+  display:flex;flex-direction:column;gap:12px;
+  position:relative;overflow:hidden;
+}
+.bcard::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.02),transparent);pointer-events:none}
+.bcard:hover{border-color:var(--ac);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.bcard-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;overflow:hidden}
+.bcard-icon img{width:100%;height:100%;object-fit:cover}
+.bcard-title{font-family:var(--ff);font-size:1.05rem;font-weight:700;color:var(--tx)}
+.bcard-sub{font-family:var(--fb);font-size:.8rem;color:var(--tx3)}
+.bcard-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.bcard-tag{padding:2px 9px;border-radius:99px;font-size:.66rem;font-weight:600;font-family:var(--fm);background:var(--ac-g);color:var(--ac2);border:1px solid rgba(47,129,247,.2)}
+.bcard-open{margin-top:auto;padding:8px 16px;background:var(--ac-g);border:1px solid rgba(47,129,247,.25);border-radius:var(--r8);color:var(--ac2);font-size:.78rem;font-weight:600;width:fit-content;transition:all var(--t)}
+.bcard:hover .bcard-open{background:var(--ac);color:white;border-color:var(--ac)}
+
+/* ══ COVER SCREEN ══ */
+#coverScr{
+  position:fixed;inset:0;z-index:800;
+  display:flex;flex-direction:column;
+  overflow-y:auto;
+}
+.cv-hero{
+  min-height:100vh;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  z-index:9999;transition:opacity .5s ease;
+  padding:60px 24px;text-align:center;
+  position:relative;overflow:hidden;
 }
-#loadScreen.fade{opacity:0;pointer-events:none}
-.load-book{font-size:3.5rem;animation:loadBounce 1s ease-in-out infinite alternate;margin-bottom:20px}
-@keyframes loadBounce{from{transform:translateY(0)}to{transform:translateY(-16px)}}
-.load-title{font-family:var(--font-serif);font-size:1.4rem;color:#e8eef8;margin-bottom:8px}
-.load-sub{font-size:.82rem;color:var(--dk-muted)}
-.load-bar{width:200px;height:3px;background:var(--dk-border);border-radius:99px;margin-top:24px;overflow:hidden}
-.load-bar-fill{height:100%;background:linear-gradient(to right,var(--gold),var(--gold2));border-radius:99px;animation:loadFill 1.4s ease forwards}
-@keyframes loadFill{from{width:0}to{width:100%}}
-.load-err{color:var(--dk-red);font-size:.82rem;margin-top:16px;display:none;text-align:center;max-width:320px;line-height:1.6}
-.load-err a{color:var(--dk-amber);text-decoration:underline}
-
-/* ─── Reader Topbar ─── */
-.reader-topbar {
-  position:sticky;top:0;z-index:100;
-  background:rgba(249,246,240,.92);backdrop-filter:blur(20px) saturate(150%);
-  border-bottom:1px solid var(--border);
-  height:58px;padding:0 28px;
-  display:flex;align-items:center;gap:16px;
+.cv-bg{position:absolute;inset:0;z-index:0}
+.cv-bg-img{width:100%;height:100%;object-fit:cover;filter:blur(24px) brightness(.35) saturate(1.6);transform:scale(1.08)}
+.cv-bg-grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,17,23,.6) 0%,rgba(13,17,23,.85) 60%,rgba(13,17,23,1) 100%)}
+.cv-bg-color{position:absolute;inset:0}
+.cv-content{position:relative;z-index:1;max-width:600px;width:100%}
+.cv-back{position:absolute;top:20px;left:20px;z-index:2;padding:8px 14px;border-radius:var(--r8);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--tx2);font-size:.76rem;display:flex;align-items:center;gap:6px;transition:all var(--t)}
+.cv-back:hover{background:rgba(255,255,255,.1);color:var(--tx)}
+.cv-book{
+  width:110px;height:110px;border-radius:24px;
+  margin:0 auto 28px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:3.2rem;overflow:hidden;
+  border:2px solid rgba(255,255,255,.12);
+  box-shadow:0 24px 60px rgba(0,0,0,.5);
+  animation:cvIn .7s cubic-bezier(.34,1.56,.64,1) both;
 }
-.rtb-brand{display:flex;align-items:center;gap:10px;font-family:var(--font-serif);font-weight:700;font-size:1.05rem;color:var(--cobalt);white-space:nowrap}
-.rtb-brand-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
-.rtb-brand-name{display:flex;flex-direction:column;gap:1px}
-.rtb-brand-main{font-size:.95rem;color:var(--cobalt)}
-.rtb-brand-bn{font-family:var(--font-bn);font-size:.7rem;color:var(--muted);font-weight:400}
-.rtb-divider{width:1px;height:22px;background:var(--border2);margin:0 2px}
-.rtb-search-wrap{flex:1;max-width:420px;position:relative}
-.rtb-search{width:100%;height:36px;padding:0 14px 0 38px;background:var(--surface);border:1.5px solid var(--border2);border-radius:99px;color:var(--ink);font-size:.875rem;outline:none;transition:all var(--t)}
-.rtb-search:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-dim)}
-.rtb-search::placeholder{color:var(--faint)}
-.rtb-search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--faint);pointer-events:none}
-.rtb-quiz-btn{display:flex;align-items:center;gap:6px;padding:7px 14px;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;border-radius:var(--r-md);color:white;font-size:.8rem;font-weight:600;transition:all var(--t);white-space:nowrap;box-shadow:0 2px 8px rgba(184,129,58,.3);margin-left:auto}
-.rtb-quiz-btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(184,129,58,.4)}
+.cv-book img{width:100%;height:100%;object-fit:cover}
+@keyframes cvIn{from{opacity:0;transform:scale(.6) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.cv-exam{font-size:.65rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-family:var(--fm);margin-bottom:10px;animation:fadeUp .5s ease both .1s}
+.cv-title{font-family:var(--ff);font-size:clamp(1.9rem,5vw,3.2rem);font-weight:900;color:white;letter-spacing:-.02em;line-height:1.1;margin-bottom:8px;animation:fadeUp .5s ease both .15s}
+.cv-subtitle{font-family:var(--fb);font-size:1.05rem;margin-bottom:5px;animation:fadeUp .5s ease both .2s}
+.cv-author{font-size:.78rem;color:rgba(255,255,255,.45);font-style:italic;margin-bottom:20px;animation:fadeUp .5s ease both .22s}
+.cv-divider{width:48px;height:2px;margin:0 auto 20px;border-radius:99px;animation:fadeUp .5s ease both .25s}
+.cv-welcome{max-width:460px;margin:0 auto 36px;font-size:.88rem;color:rgba(255,255,255,.6);line-height:1.75;animation:fadeUp .5s ease both .28s}
+.cv-cta{
+  padding:14px 44px;border-radius:99px;color:white;
+  font-size:.98rem;font-weight:700;letter-spacing:.03em;
+  transition:all var(--t2);
+  box-shadow:0 8px 28px rgba(0,0,0,.4);
+  animation:fadeUp .5s ease both .33s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.cv-cta:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 48px rgba(0,0,0,.5)}
+.cv-stats{display:flex;gap:24px;justify-content:center;margin-top:32px;flex-wrap:wrap;animation:fadeUp .5s ease both .38s}
+.cv-stat{text-align:center}
+.cv-stat-n{font-family:var(--ff);font-size:1.6rem;font-weight:900;color:white;line-height:1}
+.cv-stat-l{font-size:.63rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em;font-family:var(--fm);margin-top:2px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 
-/* ─── Layout ─── */
-.reader-layout{display:flex;min-height:calc(100vh - 58px)}
-.reader-toc{width:268px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);position:sticky;top:58px;height:calc(100vh - 58px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--border2) transparent}
-.toc-inner{padding-bottom:28px}
-.toc-bookinfo{padding:22px 20px 16px;border-bottom:1px solid var(--border)}
-.toc-book-name{font-family:var(--font-serif);font-size:1.05rem;font-weight:700;color:var(--cobalt);line-height:1.3}
-.toc-book-bn{font-family:var(--font-bn);font-size:.82rem;color:var(--muted);margin-top:3px}
-.toc-section-label{padding:16px 20px 6px;font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-family:var(--font-sans)}
-.toc-all-btn{display:flex;align-items:center;gap:10px;padding:10px 20px;cursor:pointer;border-left:3px solid transparent;transition:all var(--t);border-bottom:1px solid var(--border);margin-bottom:4px}
-.toc-all-btn:hover,.toc-all-btn.active{background:var(--gold-pale);border-left-color:var(--gold)}
-.toc-all-icon{width:28px;height:28px;background:var(--surface2);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
-.toc-all-text{font-size:.875rem;font-weight:600;color:var(--ink2)}
-.toc-all-btn.active .toc-all-text{color:var(--gold)}
-.toc-all-count{margin-left:auto;font-size:.72rem;color:var(--faint)}
-.toc-ch-item{display:flex;align-items:center;gap:10px;padding:9px 20px;cursor:pointer;border-left:3px solid transparent;transition:all var(--t)}
-.toc-ch-item:hover,.toc-ch-item.active{background:var(--gold-pale);border-left-color:var(--gold)}
-.toc-ch-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 2px rgba(255,255,255,.8)}
-.toc-ch-name{font-size:.845rem;color:var(--ink2);flex:1;line-height:1.3}
-.toc-ch-item.active .toc-ch-name{color:var(--gold);font-weight:600}
-.toc-ch-cnt{font-size:.68rem;color:var(--faint)}
-.reader-content{flex:1;min-width:0;padding:48px 56px 100px;max-width:980px}
+/* ══ MAIN APP ══ */
+#app{display:none;flex-direction:column;min-height:100vh}
+#app.show{display:flex}
 
-/* ─── Chapter Header ─── */
-.ch-header{margin-bottom:44px;padding-bottom:28px;border-bottom:1px solid var(--border);position:relative}
-.ch-header::after{content:'';position:absolute;bottom:-1px;left:0;width:64px;height:2px;background:linear-gradient(to right,var(--gold),transparent)}
-.ch-label{display:inline-flex;align-items:center;gap:6px;font-size:.65rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-family:var(--font-mono);margin-bottom:10px}
-.ch-label::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--gold)}
-.ch-title{font-family:var(--font-serif);font-size:2.2rem;font-weight:700;color:var(--cobalt);line-height:1.1;letter-spacing:-.02em}
-.ch-desc{font-size:.95rem;color:var(--muted);margin-top:10px;font-style:italic;line-height:1.65;font-family:var(--font-serif)}
-.ch-meta{display:flex;gap:20px;margin-top:16px;flex-wrap:wrap}
-.ch-meta-pill{display:flex;align-items:center;gap:5px;font-size:.75rem;color:var(--muted);background:var(--surface2);border:1px solid var(--border);border-radius:99px;padding:4px 12px}
+/* TOPBAR */
+.topbar{
+  position:sticky;top:0;z-index:200;height:54px;
+  background:rgba(13,17,23,.92);backdrop-filter:blur(20px) saturate(1.8);
+  border-bottom:1px solid var(--bd);
+  display:flex;align-items:center;padding:0 16px;gap:10px;
+}
+.tb-brand{display:flex;align-items:center;gap:8px;cursor:pointer;flex-shrink:0}
+.tb-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;overflow:hidden}
+.tb-icon img{width:100%;height:100%;object-fit:cover}
+.tb-name{font-family:var(--ff);font-size:.9rem;font-weight:700;color:var(--tx)}
+.tb-gap{flex:1}
+.tb-search-wrap{position:relative;display:flex;align-items:center;flex:1;max-width:380px}
+.tb-search-icon{position:absolute;left:11px;color:var(--tx4);pointer-events:none}
+.tb-search{
+  width:100%;padding:7px 12px 7px 34px;
+  background:var(--bg3);border:1.5px solid var(--bd);border-radius:99px;
+  color:var(--tx);font-size:.82rem;outline:none;transition:all var(--t);
+}
+.tb-search:focus{border-color:var(--ac);background:var(--bg2);box-shadow:0 0 0 3px var(--ac-gb)}
+.tb-acts{display:flex;align-items:center;gap:6px}
+.tb-btn{
+  padding:6px 13px;border-radius:var(--r8);font-size:.75rem;font-weight:600;
+  display:flex;align-items:center;gap:5px;transition:all var(--t);
+}
+.tb-btn.quiz{background:linear-gradient(135deg,var(--ac),var(--pur));color:white;box-shadow:0 2px 12px rgba(47,129,247,.25)}
+.tb-btn.quiz:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(47,129,247,.4)}
+.tb-btn.bk{border:1px solid var(--bd2);color:var(--tx3)}
+.tb-btn.bk:hover{border-color:var(--ac2);color:var(--ac2)}
+.tb-hamburger{display:none;width:34px;height:34px;border-radius:var(--r8);background:var(--bg3);border:1px solid var(--bd);align-items:center;justify-content:center;color:var(--tx2);flex-shrink:0}
 
-/* ─── Toolbar ─── */
-.content-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:10px}
-.ct-count{font-size:.82rem;color:var(--muted);font-style:italic}
-.ct-count strong{color:var(--gold);font-style:normal}
-.pos-pills{display:flex;gap:5px;flex-wrap:wrap}
-.pos-pill{padding:5px 13px;border-radius:99px;border:1.5px solid var(--border2);background:var(--surface);font-size:.75rem;color:var(--muted);font-weight:500;transition:all var(--t);white-space:nowrap}
-.pos-pill:hover{border-color:var(--gold);color:var(--gold)}
-.pos-pill.active{background:var(--gold);border-color:var(--gold);color:white}
+/* LAYOUT */
+.app-body{display:flex;flex:1;overflow:hidden}
+.sidebar{
+  width:248px;flex-shrink:0;
+  background:var(--bg2);border-right:1px solid var(--bd);
+  position:sticky;top:54px;height:calc(100vh - 54px);
+  overflow-y:auto;display:flex;flex-direction:column;
+  transition:transform var(--t2);
+}
+.sidebar::-webkit-scrollbar{width:3px}
+.content{flex:1;overflow-y:auto;min-width:0}
 
-/* ─── Section Divider ─── */
-.sec-divider{display:flex;align-items:center;gap:14px;margin:44px 0 24px}
-.sec-divider:first-child{margin-top:0}
-.sec-div-accent{width:4px;height:28px;border-radius:2px;flex-shrink:0}
-.sec-div-title{font-family:var(--font-serif);font-size:1.05rem;font-weight:700;color:var(--cobalt)}
-.sec-div-desc{font-size:.75rem;color:var(--muted);margin-top:1px}
-.sec-div-rule{flex:1;height:1px;background:var(--border)}
-.sec-div-cnt{font-size:.7rem;color:var(--muted);background:var(--surface2);border:1px solid var(--border);border-radius:99px;padding:3px 10px;white-space:nowrap}
+/* SIDEBAR */
+.sb-book{
+  padding:14px 14px 12px;border-bottom:1px solid var(--bd);
+  display:flex;align-items:center;gap:9px;
+}
+.sb-book-icon{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;overflow:hidden}
+.sb-book-icon img{width:100%;height:100%;object-fit:cover}
+.sb-book-title{font-family:var(--ff);font-size:.82rem;font-weight:700;color:var(--tx);line-height:1.3}
+.sb-book-sub{font-family:var(--fb);font-size:.69rem;color:var(--tx3);margin-top:1px}
+.sb-section{padding:0 6px;margin:10px 0 4px}
+.sb-sec-lbl{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);font-family:var(--fm);padding:0 6px}
+.sb-item{
+  display:flex;align-items:center;gap:7px;
+  padding:6px 10px;border-radius:var(--r8);
+  cursor:pointer;transition:all var(--t);
+  width:100%;text-align:left;margin-bottom:1px;
+}
+.sb-item:hover{background:var(--bg3)}
+.sb-item.on{background:var(--ac-g);border:1px solid rgba(47,129,247,.2)}
+.sb-item-icon{font-size:.88rem;flex-shrink:0;width:18px;text-align:center}
+.sb-item-text{flex:1;font-size:.78rem;color:var(--tx2);line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sb-item.on .sb-item-text{color:var(--ac2)}
+.sb-item-cnt{font-size:.63rem;color:var(--tx4);font-family:var(--fm);flex-shrink:0}
+.sb-unit{margin-bottom:4px}
+.sb-unit-hd{
+  display:flex;align-items:center;gap:7px;
+  padding:7px 10px;border-radius:var(--r8);
+  cursor:pointer;transition:all var(--t);width:100%;text-align:left;
+}
+.sb-unit-hd:hover{background:var(--bg3)}
+.sb-unit-hd.on{background:var(--ac-g)}
+.sb-unit-num{
+  width:22px;height:22px;border-radius:6px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.63rem;font-weight:800;font-family:var(--fm);
+  background:var(--bg4);color:var(--tx3);
+  border:1px solid var(--bd);
+}
+.sb-unit-hd.on .sb-unit-num{background:var(--ac-g);color:var(--ac2);border-color:rgba(47,129,247,.3)}
+.sb-unit-title{flex:1;font-size:.8rem;font-weight:600;color:var(--tx2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sb-unit-hd.on .sb-unit-title{color:var(--ac2)}
+.sb-unit-arr{font-size:.65rem;color:var(--tx4);transition:transform var(--t)}
+.sb-unit-hd.expanded .sb-unit-arr{transform:rotate(90deg)}
+.sb-lessons{display:none;padding-left:12px}
+.sb-lessons.open{display:block}
+.sb-lesson{
+  display:flex;align-items:center;gap:6px;
+  padding:5px 10px;border-radius:var(--r8);
+  cursor:pointer;transition:all var(--t);width:100%;text-align:left;margin-bottom:1px;
+  border-left:2px solid transparent;
+}
+.sb-lesson:hover{background:var(--bg3);border-left-color:var(--bd2)}
+.sb-lesson.on{background:var(--ac-gb);border-left-color:var(--ac)}
+.sb-lesson-num{font-size:.62rem;font-family:var(--fm);color:var(--tx4);flex-shrink:0}
+.sb-lesson-title{flex:1;font-size:.76rem;color:var(--tx3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sb-lesson.on .sb-lesson-title{color:var(--ac2)}
 
-/* ─── Word Card ─── */
-.entries-list{display:flex;flex-direction:column}
-.word-card{padding:28px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:210px 1fr;gap:32px;animation:cardReveal .45s ease both;transition:background var(--t)}
-@keyframes cardReveal{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:translateX(0)}}
-.word-card:last-child{border-bottom:none}
-.wc-left{}
-.wc-word-row{display:flex;align-items:flex-start;gap:8px}
-.wc-word{font-family:var(--font-serif);font-size:1.65rem;font-weight:700;color:var(--cobalt);line-height:1.05;letter-spacing:-.02em}
-.tts-btn{width:28px;height:28px;border-radius:50%;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all var(--t);margin-top:6px}
-.tts-btn:hover{background:var(--gold-pale);border-color:var(--gold);color:var(--gold);transform:scale(1.1)}
-.tts-btn.speaking{background:var(--gold);border-color:var(--gold);color:white;animation:ttsGlow .6s ease infinite alternate}
-@keyframes ttsGlow{from{box-shadow:0 0 0 0 rgba(184,129,58,.4)}to{box-shadow:0 0 0 6px rgba(184,129,58,0)}}
-.wc-pronounce{font-family:var(--font-mono);font-size:.72rem;color:var(--faint);margin-top:5px;letter-spacing:.02em}
-.wc-pos{display:inline-flex;align-items:center;margin-top:9px;padding:3px 9px;background:var(--cobalt);color:white;border-radius:4px;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.wc-bangla{font-family:var(--font-bn);font-size:1.1rem;font-weight:600;color:var(--rust);margin-top:12px;line-height:1.4}
-.wc-def{font-family:var(--font-serif);font-size:.95rem;line-height:1.8;color:var(--ink2);font-style:italic;padding:12px 16px;background:var(--gold-pale);border-left:3px solid var(--gold);border-radius:0 var(--r-md) var(--r-md) 0;margin-bottom:18px}
-.sa-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
-.sa-box{padding:10px 14px;border-radius:var(--r-md);border:1px solid}
-.sa-box.syn{background:#f0f8f1;border-color:#b8d8bc}
-.sa-box.ant{background:#fef2ef;border-color:#e8bcb4}
-.sa-label{font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
-.sa-box.syn .sa-label{color:var(--sage)}
-.sa-box.ant .sa-label{color:var(--rust)}
-.sa-en{font-weight:600;font-size:.88rem;color:var(--ink)}
-.sa-bn{font-family:var(--font-bn);font-size:.75rem;color:var(--muted);display:block;margin-top:2px}
-.wc-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px}
-.wc-row-key{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);min-width:76px;flex-shrink:0;padding-top:2px;font-family:var(--font-mono)}
-.wc-row-val{font-size:.875rem;color:var(--ink2);line-height:1.55}
-.hier-wrap{display:flex;gap:6px;flex-wrap:wrap}
-.hier-chip{display:inline-flex;align-items:center;gap:5px;font-size:.72rem;padding:3px 10px;border-radius:4px;border:1px solid}
-.hier-chip.up{background:#eef2fa;border-color:#c8d4ee;color:var(--cobalt)}
-.hier-chip.down{background:#f2edf8;border-color:#cbbde8;color:var(--violet)}
-.hier-arrow{font-size:.6rem;opacity:.6}
-.colloc-wrap{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
-.colloc-chip{font-family:var(--font-mono);font-size:.7rem;padding:3px 10px;background:var(--surface2);border:1px solid var(--border2);border-radius:4px;color:var(--ink2);white-space:nowrap;transition:all var(--t)}
-.colloc-chip:hover{background:var(--gold-pale);border-color:var(--gold);color:var(--gold)}
-.empty-state{text-align:center;padding:80px 20px;color:var(--faint)}
-.empty-icon{font-size:3rem;margin-bottom:16px;filter:grayscale(1) opacity(.5)}
-.empty-text{font-style:italic;font-size:.95rem;color:var(--muted)}
+/* ══ CONTENT AREA VIEWS ══ */
+.view{display:none;padding:28px 28px 80px;max-width:1000px;margin:0 auto}
+.view.on{display:block}
 
-/* ─── Toast ─── */
-.toast-wrap{position:fixed;bottom:24px;right:24px;z-index:999;display:flex;flex-direction:column;gap:8px;pointer-events:none}
-.toast{background:var(--dk-card);color:var(--dk-text);border:1px solid var(--dk-border);border-radius:var(--r-md);padding:10px 18px;font-size:.82rem;box-shadow:0 8px 24px rgba(0,0,0,.3);animation:toastSlide .22s ease;pointer-events:all;display:flex;align-items:center;gap:10px}
-.toast.s{border-color:rgba(52,199,124,.4);background:rgba(52,199,124,.12);color:var(--dk-green)}
-.toast.e{border-color:rgba(240,112,112,.4);background:rgba(240,112,112,.1);color:var(--dk-red)}
-@keyframes toastSlide{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
+/* PAGE HEADER */
+.pg-header{margin-bottom:28px}
+.pg-breadcrumb{display:flex;align-items:center;gap:6px;font-size:.71rem;color:var(--tx4);font-family:var(--fm);margin-bottom:10px;flex-wrap:wrap}
+.pg-bc-sep{opacity:.4}
+.pg-bc-link{cursor:pointer;transition:color var(--t)}
+.pg-bc-link:hover{color:var(--ac2)}
+.pg-label{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-family:var(--fm);margin-bottom:7px}
+.pg-title{font-family:var(--ff);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:900;color:var(--tx);letter-spacing:-.02em;line-height:1.15;margin-bottom:8px}
+.pg-desc{font-size:.86rem;color:var(--tx2);line-height:1.7;max-width:680px}
+.pg-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.pg-tag{padding:3px 11px;border-radius:99px;font-size:.67rem;font-weight:600;font-family:var(--fm);background:var(--bg3);border:1px solid var(--bd);color:var(--tx3)}
 
-/* ═══════════════════════════════════════
-   QUIZ MODAL
-═══════════════════════════════════════ */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:500;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px)}
-.modal-overlay.open{display:flex}
-.quiz-shell{width:100%;max-width:680px;margin:auto;min-height:min(92vh,700px);display:flex;flex-direction:column;background:var(--dk-bg);border-radius:var(--r-xl);overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.6);animation:modalPop .25s cubic-bezier(0.34,1.56,0.64,1)}
-@keyframes modalPop{from{opacity:0;transform:scale(.92) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
-.quiz-screen{display:none;flex:1;flex-direction:column}
-.quiz-screen.active{display:flex}
-.quiz-back-btn{display:flex;align-items:center;gap:5px;background:none;border:none;color:var(--dk-muted);font-size:.8rem;padding:8px 12px;border-radius:var(--r-md);transition:all var(--t)}
-.quiz-back-btn:hover{color:var(--dk-text);background:rgba(255,255,255,.06)}
-.qs-inner{max-width:520px;margin:0 auto;padding:40px 28px 52px;display:flex;flex-direction:column;align-items:center;text-align:center}
-.qs-icon{font-size:3rem;margin-bottom:14px}
-.qs-title{font-family:var(--font-serif);font-size:1.8rem;font-weight:700;color:var(--dk-text);margin-bottom:6px}
-.qs-subtitle{font-size:.88rem;color:var(--dk-muted);margin-bottom:32px}
-.qs-options{width:100%;display:flex;flex-direction:column;gap:20px;text-align:left}
-.qs-opt-group{display:flex;flex-direction:column;gap:8px}
-.qs-opt-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dk-muted);font-family:var(--font-mono)}
-.qs-select{padding:10px 14px;background:var(--dk-card);border:1px solid var(--dk-border);border-radius:var(--r-md);color:var(--dk-text);font-size:.875rem;outline:none;transition:border-color var(--t)}
-.qs-select:focus{border-color:var(--dk-accent)}
-.qs-type-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.qs-type-card{display:flex;flex-direction:column;align-items:center;gap:5px;padding:12px 10px;background:var(--dk-card);border:1.5px solid var(--dk-border);border-radius:var(--r-lg);cursor:pointer;transition:all var(--t);text-align:center}
-.qs-type-card:hover{border-color:var(--dk-accent);background:rgba(74,158,255,.05)}
-.qs-type-card input{display:none}
-.qs-type-card:has(input:checked){border-color:var(--dk-accent);background:rgba(74,158,255,.1)}
-.qtc-icon{font-size:1.2rem}
-.qtc-text{font-size:.72rem;color:var(--dk-muted);font-weight:500}
-.qs-type-card:has(input:checked) .qtc-text{color:var(--dk-accent)}
-.qs-count-row{display:flex;gap:7px;flex-wrap:wrap}
-.qs-count-btn{padding:7px 18px;background:var(--dk-card);border:1.5px solid var(--dk-border);border-radius:var(--r-md);color:var(--dk-muted);font-size:.85rem;font-weight:600;transition:all var(--t)}
-.qs-count-btn:hover{border-color:var(--dk-accent);color:var(--dk-accent)}
-.qs-count-btn.active{background:var(--dk-accent);border-color:var(--dk-accent);color:white}
-.qs-start-btn{margin-top:28px;width:100%;padding:14px;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;border-radius:var(--r-lg);color:white;font-size:1rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px;transition:all var(--t);box-shadow:0 4px 20px rgba(184,129,58,.3)}
-.qs-start-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(184,129,58,.4)}
-.qp-header{display:flex;align-items:center;gap:14px;padding:12px 20px;border-bottom:1px solid var(--dk-border);flex-shrink:0}
-.qp-progress-wrap{flex:1}
-.qp-progress-bar{height:5px;background:var(--dk-border);border-radius:99px;overflow:hidden}
-.qp-progress-fill{height:100%;background:linear-gradient(to right,var(--gold),var(--gold2));border-radius:99px;transition:width .4s ease}
-.qp-progress-txt{font-size:.72rem;color:var(--dk-muted);margin-top:5px;font-family:var(--font-mono)}
-.qp-score-badge{padding:4px 12px;background:rgba(52,199,124,.12);border:1px solid rgba(52,199,124,.25);border-radius:99px;font-size:.78rem;color:var(--dk-green);font-weight:700;white-space:nowrap}
-.qp-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 28px;gap:20px}
-.qp-type-label{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dk-muted);font-family:var(--font-mono)}
-.qp-card{width:100%;max-width:480px;background:var(--dk-card);border:1px solid var(--dk-border);border-radius:20px;padding:36px 28px;text-align:center;min-height:160px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 40px rgba(0,0,0,.3);position:relative;transition:all .3s ease}
-.qp-card-front{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%}
-.qp-word{font-family:var(--font-serif);font-size:2.2rem;font-weight:700;color:var(--dk-text);line-height:1.1;letter-spacing:-.02em}
-.qp-word.bn{font-family:var(--font-bn);font-size:1.7rem;color:#f0a880}
-.qp-word.def{font-size:1rem;font-style:italic;color:var(--dk-muted);line-height:1.7;font-family:var(--font-serif)}
-.qp-hint{font-size:.75rem;color:var(--dk-faint);font-family:var(--font-mono)}
-.qp-tts-btn{width:34px;height:34px;border-radius:50%;background:rgba(184,129,58,.12);border:1px solid rgba(184,129,58,.25);color:var(--gold2);display:flex;align-items:center;justify-content:center;transition:all var(--t)}
-.qp-tts-btn:hover{background:rgba(184,129,58,.25);transform:scale(1.1)}
-.qp-reveal-btn{padding:12px 28px;background:rgba(255,255,255,.06);border:1.5px solid var(--dk-border2);border-radius:var(--r-xl);color:var(--dk-text);font-size:.875rem;font-weight:600;display:flex;align-items:center;gap:8px;transition:all var(--t)}
-.qp-reveal-btn:hover{background:rgba(255,255,255,.1);border-color:var(--gold);color:var(--gold)}
-.qp-reveal-zone{width:100%;max-width:480px;display:flex;flex-direction:column;gap:12px}
-.qp-answer-box{background:rgba(74,158,255,.08);border:1px solid rgba(74,158,255,.2);border-radius:var(--r-lg);padding:18px 22px;text-align:center;animation:answerReveal .35s cubic-bezier(0.34,1.56,0.64,1)}
-@keyframes answerReveal{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
-.qa-main{font-family:var(--font-serif);font-size:1.4rem;font-weight:700;color:var(--dk-text)}
-.qa-main.bn{font-family:var(--font-bn);font-size:1.2rem;color:#f0a880}
-.qa-def{font-size:.8rem;color:var(--dk-muted);font-style:italic;margin-top:6px;line-height:1.5}
-.qp-judge-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.qp-judge-btn{padding:11px;border-radius:var(--r-lg);font-size:.85rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;transition:all var(--t);border:1.5px solid}
-.qp-judge-btn.wrong{background:rgba(240,112,112,.1);border-color:rgba(240,112,112,.3);color:var(--dk-red)}
-.qp-judge-btn.wrong:hover{background:rgba(240,112,112,.2);transform:scale(1.02)}
-.qp-judge-btn.right{background:rgba(52,199,124,.1);border-color:rgba(52,199,124,.3);color:var(--dk-green)}
-.qp-judge-btn.right:hover{background:rgba(52,199,124,.2);transform:scale(1.02)}
-.qr-inner{max-width:460px;margin:0 auto;padding:40px 24px 52px;display:flex;flex-direction:column;align-items:center;text-align:center}
-.qr-trophy{font-size:3.2rem;margin-bottom:10px;animation:trophyPop .6s cubic-bezier(0.34,1.56,0.64,1) both .3s}
-@keyframes trophyPop{from{opacity:0;transform:scale(0) rotate(-20deg)}to{opacity:1;transform:scale(1) rotate(0)}}
-.qr-title{font-family:var(--font-serif);font-size:1.7rem;font-weight:700;color:var(--dk-text);margin-bottom:24px}
-.qr-score-ring{position:relative;width:130px;height:130px;margin-bottom:24px}
-.qr-ring-svg{width:100%;height:100%}
+/* BOOK HOME VIEW */
+.parts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:32px}
+.part-card{
+  background:var(--surf);border:1px solid var(--bd);border-radius:var(--r16);
+  padding:18px;cursor:pointer;transition:all var(--t2);
+}
+.part-card:hover{border-color:var(--ac);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3)}
+.part-card-icon{font-size:1.6rem;margin-bottom:10px}
+.part-card-title{font-family:var(--ff);font-size:.92rem;font-weight:700;color:var(--tx);margin-bottom:3px}
+.part-card-sub{font-size:.72rem;color:var(--tx3);line-height:1.5}
+
+/* UNIT VIEW */
+.unit-overview{
+  background:var(--surf);border:1px solid var(--bd);border-radius:var(--r16);
+  padding:22px 24px;margin-bottom:24px;
+}
+.ov-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.ov-item{}
+.ov-label{font-size:.61rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tx4);font-family:var(--fm);margin-bottom:5px}
+.ov-text{font-size:.82rem;color:var(--tx2);line-height:1.6}
+.lessons-list{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.lesson-card{
+  background:var(--surf);border:1px solid var(--bd);border-radius:var(--r16);
+  padding:18px 20px;cursor:pointer;transition:all var(--t2);
+  display:flex;align-items:flex-start;gap:14px;
+}
+.lesson-card:hover{border-color:var(--ac);background:var(--surf2)}
+.lesson-num{
+  width:36px;height:36px;border-radius:10px;flex-shrink:0;
+  background:var(--bg3);border:1px solid var(--bd);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.72rem;font-weight:800;font-family:var(--fm);color:var(--tx3);
+}
+.lesson-card:hover .lesson-num{background:var(--ac-g);color:var(--ac2);border-color:rgba(47,129,247,.3)}
+.lesson-info{flex:1}
+.lesson-title{font-family:var(--ff);font-size:1rem;font-weight:700;color:var(--tx);margin-bottom:4px}
+.lesson-excerpt{font-size:.78rem;color:var(--tx3);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.lesson-meta{display:flex;gap:7px;margin-top:8px;flex-wrap:wrap}
+.lesson-badge{padding:2px 8px;border-radius:99px;font-size:.63rem;font-weight:600;font-family:var(--fm);background:var(--bg3);border:1px solid var(--bd);color:var(--tx4)}
+
+/* SEMANTIC FIELD MAP */
+.sem-map{
+  background:var(--surf);border:1px solid var(--bd);border-radius:var(--r16);
+  padding:22px 24px;margin-bottom:20px;
+}
+.sem-title{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-family:var(--fm);color:var(--tx4);margin-bottom:14px}
+.sem-core-row{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.sem-core-lbl{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-family:var(--fm);color:var(--gold);white-space:nowrap}
+.sem-core-words{display:flex;gap:6px;flex-wrap:wrap}
+.sem-core-word{padding:4px 12px;border-radius:99px;font-size:.76rem;font-weight:600;background:var(--gold-g);border:1px solid rgba(212,160,23,.25);color:var(--gold2)}
+.sem-sub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.sem-sub{background:var(--bg3);border:1px solid var(--bd);border-radius:var(--r12);padding:13px 14px}
+.sem-sub-name{font-size:.67rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tx3);font-family:var(--fm);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
+.sem-sub-words{display:flex;gap:4px;flex-wrap:wrap}
+.sem-sub-word{padding:2px 8px;border-radius:6px;font-size:.72rem;background:var(--bg4);border:1px solid var(--bd);color:var(--tx3);cursor:pointer;transition:all var(--t)}
+.sem-sub-word:hover{border-color:var(--ac2);color:var(--ac2)}
+
+/* LESSON VIEW */
+.lesson-tabs{display:flex;gap:4px;background:var(--bg3);border-radius:var(--r12);padding:4px;margin-bottom:22px;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}
+.lesson-tabs::-webkit-scrollbar{display:none}
+.ltab{
+  padding:7px 14px;border-radius:var(--r8);font-size:.76rem;font-weight:600;
+  color:var(--tx3);white-space:nowrap;transition:all var(--t);flex-shrink:0;
+}
+.ltab:hover{color:var(--tx);background:rgba(255,255,255,.05)}
+.ltab.on{background:var(--surf2);color:var(--tx);box-shadow:0 1px 4px rgba(0,0,0,.3)}
+
+.lesson-panel{display:none}
+.lesson-panel.on{display:block}
+
+/* Text Summary Panel */
+.summary-card{
+  background:var(--surf);border:1px solid var(--bd);border-radius:var(--r16);
+  padding:22px 24px;margin-bottom:16px;
+}
+.sc-label{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-family:var(--fm);color:var(--tx4);margin-bottom:10px}
+.sc-text{font-size:.88rem;color:var(--tx2);line-height:1.8}
+.key-ideas-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px}
+.ki{background:var(--surf);border:1px solid var(--bd);border-radius:var(--r12);padding:14px 16px}
+.ki-label{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-family:var(--fm);margin-bottom:5px}
+.ki-text{font-size:.8rem;color:var(--tx2);line-height:1.6}
+
+/* Word Categories Panel */
+.cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.cat-box{background:var(--surf);border:1px solid var(--bd);border-radius:var(--r12);padding:14px 16px}
+.cat-label{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-family:var(--fm);margin-bottom:9px;padding-bottom:7px;border-bottom:1px solid var(--bd)}
+.cat-words{display:flex;gap:5px;flex-wrap:wrap}
+.cat-word{
+  padding:3px 10px;border-radius:99px;font-size:.74rem;font-weight:500;
+  cursor:pointer;transition:all var(--t);
+  background:var(--bg3);border:1px solid var(--bd);color:var(--tx3);
+}
+.cat-word:hover{background:var(--ac-g);border-color:rgba(47,129,247,.25);color:var(--ac2)}
+
+/* Contextual Usage Panel */
+.cu-item{background:var(--surf);border:1px solid var(--bd);border-radius:var(--r12);padding:16px 18px;margin-bottom:10px}
+.cu-word{font-family:var(--ff);font-size:1.05rem;font-weight:700;color:var(--tx);margin-bottom:10px}
+.cu-quote{
+  padding:12px 16px;background:var(--bg3);border-left:3px solid var(--ac);
+  border-radius:0 var(--r8) var(--r8) 0;font-style:italic;
+  font-size:.84rem;color:var(--tx2);margin-bottom:10px;
+}
+.cu-why{font-size:.8rem;color:var(--tx3);line-height:1.7}
+
+/* Semantic Network Panel */
+.sn-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.sn-box{background:var(--surf);border:1px solid var(--bd);border-radius:var(--r12);padding:14px 16px}
+.sn-label{font-size:.61rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-family:var(--fm);color:var(--tx4);margin-bottom:8px}
+.sn-words{display:flex;gap:5px;flex-wrap:wrap}
+.sn-word{padding:3px 9px;border-radius:6px;font-size:.74rem;background:var(--grn-g);border:1px solid rgba(63,185,80,.2);color:var(--grn)}
+.opp-pair{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--bd)}
+.opp-pair:last-child{border-bottom:none}
+.opp-w{font-size:.82rem;font-weight:600;color:var(--tx);flex:1}
+.opp-m{font-size:.72rem;color:var(--tx4);flex:1}
+.opp-vs{font-size:.65rem;font-family:var(--fm);color:var(--tx4);padding:0 4px}
+
+/* Practice Panel */
+.practice-item{background:var(--surf);border:1px solid var(--bd);border-radius:var(--r12);padding:16px 18px;margin-bottom:10px}
+.pi-type{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-family:var(--fm);margin-bottom:8px}
+.pi-q{font-size:.86rem;color:var(--tx);line-height:1.7;margin-bottom:12px}
+.blank{display:inline-block;min-width:80px;border-bottom:2px solid var(--ac);color:var(--ac2);font-weight:600;text-align:center;padding:0 4px}
+.pi-ans-btn{padding:7px 16px;border-radius:var(--r8);background:var(--bg3);border:1px solid var(--bd2);color:var(--tx3);font-size:.76rem;font-weight:600;transition:all var(--t);display:flex;align-items:center;gap:6px}
+.pi-ans-btn:hover{border-color:var(--ac2);color:var(--ac2)}
+.pi-answer{display:none;margin-top:12px;padding:12px 14px;background:var(--grn-g);border:1px solid rgba(63,185,80,.2);border-radius:var(--r8);font-size:.82rem;color:var(--grn);line-height:1.6}
+.pi-answer.show{display:block}
+
+/* ══ WORD CARDS ══ */
+.words-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px}
+.wh-title{font-size:.8rem;font-weight:600;color:var(--tx2)}
+.wh-filters{display:flex;gap:6px;flex-wrap:wrap}
+.wf-pill{padding:4px 12px;border-radius:99px;font-size:.71rem;font-weight:600;border:1.5px solid var(--bd);color:var(--tx3);background:var(--bg3);transition:all var(--t);cursor:pointer}
+.wf-pill:hover{border-color:var(--ac2);color:var(--ac2)}
+.wf-pill.on{background:var(--ac);border-color:var(--ac);color:white}
+.words-list{display:flex;flex-direction:column;gap:14px}
+
+/* WORD CARD */
+.wcard{
+  background:var(--surf);border:1px solid var(--bd);border-radius:var(--r20);
+  overflow:hidden;animation:wci .25s ease both;transition:border-color var(--t2);
+}
+@keyframes wci{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.wcard:hover{border-color:var(--bd2)}
+.wcard-header{
+  display:grid;grid-template-columns:1fr auto;
+  padding:18px 22px 0;gap:12px;align-items:start;
+}
+.wcard-left{}
+.wcard-num{font-size:.6rem;font-family:var(--fm);color:var(--tx4);margin-bottom:3px;font-weight:600;letter-spacing:.1em}
+.wcard-word-row{display:flex;align-items:center;gap:9px;margin-bottom:4px}
+.wcard-word{font-family:var(--ff);font-size:1.55rem;font-weight:900;color:var(--tx);letter-spacing:-.02em;line-height:1}
+.wcard-tts{
+  width:28px;height:28px;border-radius:50%;flex-shrink:0;
+  background:var(--ac-g);border:1px solid rgba(47,129,247,.2);
+  display:flex;align-items:center;justify-content:center;color:var(--ac2);
+  transition:all var(--t);
+}
+.wcard-tts:hover{background:var(--ac);color:white;transform:scale(1.1)}
+.wcard-tts.sp{background:var(--ac);color:white;animation:spk .8s ease-in-out infinite alternate}
+@keyframes spk{from{box-shadow:0 0 0 0 rgba(47,129,247,.4)}to{box-shadow:0 0 0 8px transparent}}
+.wcard-pr{font-family:var(--fm);font-size:.74rem;color:var(--tx4);letter-spacing:.02em;margin-bottom:5px}
+.wcard-pos{display:inline-flex;align-items:center;padding:2px 9px;border-radius:99px;font-size:.64rem;font-weight:700;letter-spacing:.07em;font-family:var(--fm);background:var(--ac-g);color:var(--ac2);border:1px solid rgba(47,129,247,.2)}
+.wcard-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.wcard-cardnum{font-size:.6rem;font-family:var(--fm);color:var(--tx4);background:var(--bg3);padding:2px 8px;border-radius:6px;border:1px solid var(--bd)}
+.wcard-bangla{font-family:var(--fb);font-size:1.05rem;font-weight:700;color:var(--gold2);text-align:right;line-height:1.4}
+
+/* Word card sections */
+.wcard-body{padding:0 22px 18px}
+.wcard-def{
+  margin:14px 0 0;
+  padding:13px 16px;
+  background:var(--bg3);border-radius:var(--r12);
+  font-size:.84rem;color:var(--tx2);line-height:1.75;
+  font-style:italic;border-left:3px solid var(--ac);
+}
+
+.wcard-sections{margin-top:14px;display:flex;flex-direction:column;gap:2px}
+.ws{border:1px solid var(--bd);border-radius:var(--r12);overflow:hidden}
+.ws-toggle{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:9px 14px;cursor:pointer;transition:all var(--t);
+  background:var(--bg3);
+  user-select:none;
+}
+.ws-toggle:hover{background:var(--bg4)}
+.ws-toggle-left{display:flex;align-items:center;gap:8px}
+.ws-ico{font-size:.85rem}
+.ws-lbl{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-family:var(--fm);color:var(--tx3)}
+.ws-arr{font-size:.62rem;color:var(--tx4);transition:transform var(--t)}
+.ws.open .ws-arr{transform:rotate(180deg)}
+.ws-body{display:none;padding:14px 16px;background:var(--surf)}
+.ws.open .ws-body{display:block}
+
+/* Meaning Layers */
+.ml-grid{display:flex;flex-direction:column;gap:8px}
+.ml-item{display:flex;gap:10px;align-items:flex-start}
+.ml-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.ml-lbl{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-family:var(--fm);color:var(--tx4);min-width:76px;flex-shrink:0;margin-top:2px}
+.ml-text{font-size:.82rem;color:var(--tx2);line-height:1.6;flex:1}
+
+/* Lexical Relations */
+.lr-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.lr-item{}
+.lr-lbl{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-family:var(--fm);color:var(--tx4);margin-bottom:5px}
+.lr-words{display:flex;gap:4px;flex-wrap:wrap}
+.lr-word{
+  padding:3px 9px;border-radius:6px;font-size:.74rem;
+  background:var(--bg3);border:1px solid var(--bd);color:var(--tx3);
+  cursor:pointer;transition:all var(--t);
+}
+.lr-word.syn:hover{background:var(--grn-g);border-color:rgba(63,185,80,.3);color:var(--grn)}
+.lr-word.ant:hover{background:var(--red-g);border-color:rgba(248,81,73,.3);color:var(--red)}
+.lr-word.hyp{background:rgba(163,113,247,.08);border-color:rgba(163,113,247,.2);color:var(--pur)}
+.lr-word.hypo{background:rgba(212,160,23,.08);border-color:rgba(212,160,23,.2);color:var(--gold2)}
+
+/* Morphology */
+.morph-grid{display:flex;flex-direction:column;gap:7px}
+.morph-item{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.morph-lbl{font-size:.64rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-family:var(--fm);color:var(--tx4);min-width:72px;flex-shrink:0}
+.morph-val{font-size:.82rem;color:var(--tx2);line-height:1.5}
+.morph-deriv{display:flex;gap:5px;flex-wrap:wrap}
+.deriv-chip{padding:2px 9px;border-radius:6px;font-size:.72rem;background:var(--pur-g);border:1px solid rgba(163,113,247,.2);color:var(--pur)}
+
+/* Collocations */
+.col-list{display:flex;gap:6px;flex-wrap:wrap}
+.col-chip{
+  padding:4px 12px;border-radius:99px;font-size:.76rem;
+  background:var(--bg3);border:1px solid var(--bd);color:var(--tx3);
+  font-style:italic;
+}
+
+/* Usage in Lesson */
+.ul-quote{
+  padding:13px 16px;background:var(--bg3);border-left:3px solid var(--gold);
+  border-radius:0 var(--r8) var(--r8) 0;font-style:italic;
+  font-size:.84rem;color:var(--tx2);margin-bottom:10px;line-height:1.7;
+}
+.ul-explanation{font-size:.82rem;color:var(--tx3);line-height:1.7}
+
+/* Example Sentences */
+.ex-list{display:flex;flex-direction:column;gap:7px}
+.ex-item{display:flex;gap:9px;align-items:baseline}
+.ex-num{font-size:.63rem;font-family:var(--fm);color:var(--tx4);font-weight:700;flex-shrink:0;width:16px}
+.ex-text{font-size:.82rem;color:var(--tx2);line-height:1.65;font-style:italic}
+
+/* Cognitive Image */
+.cog-box{
+  padding:13px 16px;background:linear-gradient(135deg,rgba(163,113,247,.06),rgba(47,129,247,.06));
+  border:1px solid rgba(163,113,247,.15);border-radius:var(--r12);
+  font-size:.82rem;color:var(--tx2);line-height:1.7;
+  display:flex;gap:10px;align-items:flex-start;
+}
+.cog-icon{font-size:1.2rem;flex-shrink:0}
+
+/* Common Errors */
+.err-item{background:var(--red-g);border:1px solid rgba(248,81,73,.18);border-radius:var(--r12);padding:12px 14px;margin-bottom:7px}
+.err-item:last-child{margin-bottom:0}
+.err-title{font-size:.72rem;font-weight:700;color:var(--red);margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.err-text{font-size:.8rem;color:var(--tx3);line-height:1.6}
+
+/* ══ QUIZ MODAL ══ */
+.quiz-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.75);
+  backdrop-filter:blur(6px);z-index:600;
+  display:none;align-items:stretch;
+}
+.quiz-overlay.open{display:flex}
+.quiz-shell{
+  width:100%;max-width:700px;margin:auto;
+  background:var(--bg2);border:1px solid var(--bd2);border-radius:var(--r24);
+  max-height:94vh;overflow-y:auto;display:flex;flex-direction:column;
+  animation:qin .22s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes qin{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+
+/* Quiz Setup */
+.qs-header{
+  padding:22px 24px;border-bottom:1px solid var(--bd);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.qs-title{font-family:var(--ff);font-size:1.2rem;font-weight:700}
+.qs-close{width:30px;height:30px;border-radius:50%;background:var(--bg3);color:var(--tx3);display:flex;align-items:center;justify-content:center;transition:all var(--t)}
+.qs-close:hover{background:var(--bd2);color:var(--tx)}
+.qs-body{padding:22px 24px;flex:1}
+.qs-row{margin-bottom:18px}
+.qs-lbl{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-family:var(--fm);color:var(--tx4);margin-bottom:8px}
+.qs-select{width:100%;padding:9px 13px;background:var(--bg3);border:1.5px solid var(--bd);border-radius:var(--r8);color:var(--tx);font-size:.84rem;outline:none;transition:border-color var(--t)}
+.qs-select:focus{border-color:var(--ac)}
+.qtype-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.qtype{
+  padding:12px 13px;background:var(--bg3);border:1.5px solid var(--bd);
+  border-radius:var(--r12);cursor:pointer;transition:all var(--t);
+  display:flex;align-items:flex-start;gap:9px;
+}
+.qtype:has(input:checked){border-color:var(--ac);background:var(--ac-g)}
+.qtype input{display:none}
+.qtype-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+.qtype-info{}
+.qtype-name{font-size:.77rem;font-weight:600;color:var(--tx2);margin-bottom:1px}
+.qtype:has(input:checked) .qtype-name{color:var(--ac2)}
+.qtype-desc{font-size:.67rem;color:var(--tx4);line-height:1.4}
+.qcount-row{display:flex;gap:6px;flex-wrap:wrap}
+.qcnt{padding:6px 14px;border-radius:var(--r8);background:var(--bg3);border:1.5px solid var(--bd);color:var(--tx3);font-size:.78rem;font-weight:600;transition:all var(--t)}
+.qcnt.on{background:var(--ac-g);border-color:rgba(47,129,247,.35);color:var(--ac2)}
+.qcnt:hover{border-color:var(--bd2)}
+.qs-start{
+  margin-top:22px;width:100%;padding:13px;
+  background:linear-gradient(135deg,var(--ac),var(--pur));
+  border-radius:var(--r12);color:white;font-size:.95rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:all var(--t2);box-shadow:0 4px 20px rgba(47,129,247,.25);
+}
+.qs-start:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(47,129,247,.4)}
+
+/* Quiz Play */
+.qp-progress{
+  padding:14px 22px;border-bottom:1px solid var(--bd);
+  display:flex;align-items:center;gap:14px;flex-shrink:0;
+}
+.qp-bar-wrap{flex:1}
+.qp-bar{height:5px;background:var(--bd);border-radius:99px;overflow:hidden}
+.qp-fill{height:100%;background:linear-gradient(90deg,var(--ac),var(--pur));border-radius:99px;transition:width .4s ease}
+.qp-txt{font-size:.69rem;color:var(--tx4);margin-top:4px;font-family:var(--fm)}
+.qp-score{padding:3px 12px;background:var(--grn-g);border:1px solid rgba(63,185,80,.25);border-radius:99px;font-size:.76rem;font-weight:700;color:var(--grn);white-space:nowrap}
+.qp-body{flex:1;display:flex;flex-direction:column;align-items:center;padding:28px 24px;gap:18px}
+.qp-type-lbl{font-size:.63rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-family:var(--fm);color:var(--tx4)}
+.qp-card{
+  width:100%;max-width:480px;min-height:160px;
+  background:var(--bg3);border:2px solid var(--bd);border-radius:var(--r20);
+  padding:32px 28px;text-align:center;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  box-shadow:0 8px 32px rgba(0,0,0,.3);transition:all .3s;
+}
+.qp-word{font-family:var(--ff);font-size:2rem;font-weight:900;color:var(--tx);line-height:1.1}
+.qp-word.bn{font-family:var(--fb);font-size:1.6rem;color:var(--gold2)}
+.qp-word.df{font-size:.95rem;font-style:italic;color:var(--tx2);line-height:1.75;font-family:var(--fn)}
+.qp-word.sm{font-size:.88rem;color:var(--tx3);font-style:italic;font-family:var(--fn);line-height:1.7}
+.qp-hint{font-size:.73rem;color:var(--tx4);font-family:var(--fm)}
+.qp-tts{width:34px;height:34px;border-radius:50%;background:var(--ac-g);border:1px solid rgba(47,129,247,.2);color:var(--ac2);display:flex;align-items:center;justify-content:center;transition:all var(--t)}
+.qp-tts:hover{background:var(--ac);color:white}
+.qp-reveal{
+  padding:11px 28px;background:var(--bg3);border:1.5px solid var(--bd2);
+  border-radius:var(--r16);color:var(--tx2);font-size:.86rem;font-weight:600;
+  display:flex;align-items:center;gap:7px;transition:all var(--t);
+}
+.qp-reveal:hover{border-color:var(--ac2);color:var(--ac2)}
+.qp-answer{
+  width:100%;max-width:480px;
+  background:var(--ac-gb);border:1px solid rgba(47,129,247,.2);
+  border-radius:var(--r16);padding:16px 20px;text-align:center;
+  animation:qans .25s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes qans{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+.qa-main{font-family:var(--ff);font-size:1.4rem;font-weight:700;color:var(--tx)}
+.qa-main.bn{font-family:var(--fb);font-size:1.2rem;color:var(--gold2)}
+.qa-sub{font-size:.78rem;color:var(--tx3);margin-top:5px;font-style:italic;line-height:1.5}
+.qp-judge{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;max-width:480px}
+.qjb{
+  padding:12px;border-radius:var(--r12);font-size:.86rem;font-weight:600;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  transition:all var(--t);border:1.5px solid;
+}
+.qjb.wrong{background:var(--red-g);border-color:rgba(248,81,73,.3);color:var(--red)}
+.qjb.wrong:hover{background:rgba(248,81,73,.2);transform:scale(1.02)}
+.qjb.right{background:var(--grn-g);border-color:rgba(63,185,80,.3);color:var(--grn)}
+.qjb.right:hover{background:rgba(63,185,80,.2);transform:scale(1.02)}
+
+/* Fill blank quiz */
+.qfb-input{
+  width:100%;max-width:400px;padding:11px 16px;
+  background:var(--bg4);border:2px solid var(--bd);border-radius:var(--r12);
+  color:var(--tx);font-size:.92rem;outline:none;text-align:center;
+  transition:border-color var(--t);font-family:var(--fn);
+}
+.qfb-input:focus{border-color:var(--ac)}
+.qfb-submit{
+  padding:10px 28px;background:var(--ac);border-radius:var(--r12);
+  color:white;font-size:.85rem;font-weight:700;transition:all var(--t);
+}
+.qfb-submit:hover{filter:brightness(1.15);transform:scale(1.03)}
+
+/* Match quiz */
+.qmatch-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;max-width:500px}
+.qmatch-col{display:flex;flex-direction:column;gap:7px}
+.qmatch-item{
+  padding:10px 14px;border:1.5px solid var(--bd);border-radius:var(--r12);
+  cursor:pointer;transition:all var(--t);font-size:.82rem;text-align:center;
+  background:var(--bg3);
+}
+.qmatch-item:hover{border-color:var(--ac2)}
+.qmatch-item.selected{border-color:var(--ac);background:var(--ac-g);color:var(--ac2)}
+.qmatch-item.matched{border-color:var(--grn);background:var(--grn-g);color:var(--grn);cursor:default}
+.qmatch-item.wrong{border-color:var(--red);background:var(--red-g);color:var(--red)}
+
+/* Quiz Results */
+.qr-body{padding:40px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
+.qr-trophy{font-size:3.5rem;animation:trp .6s cubic-bezier(.34,1.56,.64,1) both .2s}
+@keyframes trp{from{opacity:0;transform:scale(0) rotate(-20deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+.qr-title{font-family:var(--ff);font-size:1.8rem;font-weight:900;color:var(--tx)}
+.qr-ring{position:relative;width:140px;height:140px}
+.qr-ring svg{width:100%;height:100%}
 .qr-ring-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.qr-pct{font-family:var(--font-serif);font-size:1.9rem;font-weight:900;color:var(--gold2)}
-.qr-pct-lbl{font-size:.65rem;color:var(--dk-muted);text-transform:uppercase;letter-spacing:.1em}
-.qr-stats{display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap;justify-content:center}
-.qr-stat{padding:10px 18px;background:var(--dk-card);border:1px solid var(--dk-border);border-radius:var(--r-lg);min-width:80px}
-.qr-stat-val{font-family:var(--font-serif);font-size:1.5rem;font-weight:700}
-.qr-stat-val.g{color:var(--dk-green)}.qr-stat-val.r{color:var(--dk-red)}
-.qr-stat-lbl{font-size:.68rem;color:var(--dk-muted);margin-top:2px}
-.qr-missed-section{width:100%;margin-bottom:20px;text-align:left}
-.qr-missed-title{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dk-muted);margin-bottom:8px;font-family:var(--font-mono)}
+.qr-pct{font-family:var(--ff);font-size:2rem;font-weight:900;color:var(--gold2)}
+.qr-pct-lbl{font-size:.63rem;color:var(--tx4);text-transform:uppercase;letter-spacing:.1em;font-family:var(--fm)}
+.qr-stats{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.qr-stat{padding:12px 20px;background:var(--bg3);border:1px solid var(--bd);border-radius:var(--r12);min-width:80px}
+.qr-stat-v{font-family:var(--ff);font-size:1.6rem;font-weight:800;line-height:1}
+.qr-stat-v.g{color:var(--grn)}
+.qr-stat-v.r{color:var(--red)}
+.qr-stat-l{font-size:.67rem;color:var(--tx4);margin-top:3px;font-family:var(--fm)}
+.qr-missed{width:100%;max-width:500px;text-align:left}
+.qr-missed-t{font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-family:var(--fm);color:var(--tx4);margin-bottom:8px}
 .qr-missed-list{display:flex;flex-wrap:wrap;gap:5px}
-.qr-missed-chip{padding:3px 10px;background:rgba(240,112,112,.1);border:1px solid rgba(240,112,112,.25);border-radius:99px;font-size:.75rem;color:var(--dk-red);font-family:var(--font-serif)}
-.qr-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:6px}
-.qr-btn{padding:9px 20px;border-radius:var(--r-lg);font-size:.875rem;font-weight:600;transition:all var(--t);border:1.5px solid}
-.qr-btn.primary{background:var(--gold);border-color:var(--gold);color:white}
-.qr-btn.primary:hover{background:#a06828}
-.qr-btn.secondary{background:transparent;border-color:var(--dk-border2);color:var(--dk-muted)}
-.qr-btn.secondary:hover{border-color:var(--dk-text);color:var(--dk-text)}
+.qr-missed-w{padding:3px 11px;background:var(--red-g);border:1px solid rgba(248,81,73,.25);border-radius:99px;font-size:.76rem;color:var(--red);font-family:var(--ff)}
+.qr-actions{display:flex;gap:9px;flex-wrap:wrap;justify-content:center}
+.qr-btn{padding:10px 22px;border-radius:var(--r12);font-size:.86rem;font-weight:700;transition:all var(--t);border:1.5px solid}
+.qr-btn.p{background:linear-gradient(135deg,var(--ac),var(--pur));border-color:transparent;color:white;box-shadow:0 4px 18px rgba(47,129,247,.25)}
+.qr-btn.p:hover{transform:translateY(-2px)}
+.qr-btn.s{background:transparent;border-color:var(--bd2);color:var(--tx3)}
+.qr-btn.s:hover{border-color:var(--tx);color:var(--tx)}
 
-/* ─── Responsive ─── */
+/* ══ MISC ══ */
+.divider{height:1px;background:var(--bd);margin:20px 0}
+.empty{text-align:center;padding:60px 20px}
+.empty-i{font-size:3rem;margin-bottom:12px}
+.empty-t{font-size:.88rem;color:var(--tx3);line-height:1.7}
+.err-banner{margin:30px auto;max-width:520px;padding:18px 22px;background:var(--red-g);border:1px solid rgba(248,81,73,.2);border-radius:var(--r16);text-align:center;color:var(--red);font-size:.84rem;line-height:1.7}
+.err-banner code{font-family:var(--fm);font-size:.9em}
+
+.scr{display:none}
+.scr.on{display:block}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:900px){
+  .ov-grid{grid-template-columns:1fr 1fr}
+  .key-ideas-grid{grid-template-columns:1fr}
+  .lr-grid{grid-template-columns:1fr}
+  .sn-row{grid-template-columns:1fr}
+}
 @media(max-width:768px){
-  .reader-toc{display:none}
-  .reader-content{padding:28px 20px 60px}
-  .word-card{grid-template-columns:1fr;gap:16px}
-  .reader-topbar{padding:0 14px;gap:10px}
-  .rtb-brand-name .rtb-brand-main{font-size:.85rem}
+  .sidebar{
+    position:fixed;left:0;top:54px;z-index:150;
+    transform:translateX(-100%);height:calc(100vh - 54px);
+    box-shadow:4px 0 30px rgba(0,0,0,.5);
+  }
+  .sidebar.open{transform:translateX(0)}
+  .tb-hamburger{display:flex}
+  .tb-search-wrap{max-width:100%}
+  .view{padding:18px 14px 60px}
+  .ov-grid{grid-template-columns:1fr}
+  .parts-grid{grid-template-columns:1fr 1fr}
+  .cat-grid{grid-template-columns:1fr}
+  .qtype-grid{grid-template-columns:1fr}
+  .wcard-header{grid-template-columns:1fr}
+  .wcard-right{flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .quiz-shell{border-radius:var(--r16) var(--r16) 0 0;margin-top:auto;max-height:92vh}
+  .sem-sub-grid{grid-template-columns:1fr}
+  .qmatch-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .parts-grid{grid-template-columns:1fr}
+  .cv-title{font-size:1.8rem}
+  .pg-title{font-size:1.4rem}
+  .wcard-word{font-size:1.3rem}
+  .qp-word{font-size:1.6rem}
+  .lesson-tabs{gap:2px}
+  .ltab{padding:6px 10px;font-size:.72rem}
 }
 </style>
 </head>
 <body>
 
-<!-- Loading Screen -->
-<div id="loadScreen">
-  <div class="load-book">📖</div>
-  <div class="load-title">VocabBook</div>
-  <div class="load-sub">শব্দ ভান্ডার — Loading vocabulary…</div>
-  <div class="load-bar"><div class="load-bar-fill"></div></div>
-  <div class="load-err" id="loadErr"></div>
+<!-- ══ LOADING ══ -->
+<div id="loadScr">
+  <div class="ld-logo" id="ldIco">📘</div>
+  <div class="ld-title" id="ldTitle">WordBook</div>
+  <div class="ld-sub" id="ldSub">LOADING VOCABULARY…</div>
+  <div class="ld-bar"><div class="ld-fill"></div></div>
 </div>
 
-<!-- Reader -->
-<div id="readerWrap" style="display:none">
-  <header class="reader-topbar">
-    <div class="rtb-brand">
-      <div class="rtb-brand-icon">📖</div>
-      <div class="rtb-brand-name">
-        <span class="rtb-brand-main" id="brandTitle">My Vocabulary Book</span>
-        <span class="rtb-brand-bn" id="brandBn">শব্দ ভান্ডার</span>
-      </div>
+<!-- ══ BOOK SELECTOR ══ -->
+<div id="bookSelector" style="display:none">
+  <div class="bs-header">
+    <div class="bs-logo">📚</div>
+    <h1 class="bs-title">WordBook</h1>
+    <p class="bs-sub">Choose a vocabulary book to open</p>
+  </div>
+  <div class="bs-grid" id="bsGrid"></div>
+</div>
+
+<!-- ══ COVER SCREEN ══ -->
+<div id="coverScr" style="display:none">
+  <button class="cv-back" onclick="showSelector()" id="cvBack" style="display:none">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>All Books
+  </button>
+  <div class="cv-hero">
+    <div class="cv-bg">
+      <img id="cvBgImg" class="cv-bg-img" style="display:none" alt="">
+      <div class="cv-bg-color" id="cvBgColor"></div>
+      <div class="cv-bg-grad"></div>
     </div>
-    <div class="rtb-divider"></div>
-    <div class="rtb-search-wrap">
-      <svg class="rtb-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input class="rtb-search" type="text" id="bookSearch" placeholder="Search words, meanings, collocations…" oninput="renderBook()">
+    <div class="cv-content">
+      <div class="cv-book" id="cvBook">📘</div>
+      <div class="cv-exam" id="cvExam" style="color:var(--ac2)"></div>
+      <h1 class="cv-title" id="cvTitle">WordBook</h1>
+      <div class="cv-subtitle bn" id="cvSub" style="color:rgba(255,255,255,.7)"></div>
+      <div class="cv-author" id="cvAuthor"></div>
+      <div class="cv-divider" id="cvDiv"></div>
+      <div class="cv-welcome" id="cvWelcome" style="display:none"></div>
+      <button class="cv-cta" id="cvCta" onclick="enterReader()">Open Book →</button>
+      <div class="cv-stats" id="cvStats"></div>
     </div>
-    <button class="rtb-quiz-btn" onclick="openQuiz()">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      Quiz
+  </div>
+</div>
+
+<!-- ══ APP ══ -->
+<div id="app">
+  <header class="topbar">
+    <button class="tb-hamburger" id="hamburger" onclick="toggleSidebar()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
+    <div class="tb-brand" onclick="showCover()">
+      <div class="tb-icon" id="appIcon">📘</div>
+      <div class="tb-name" id="appName">WordBook</div>
+    </div>
+    <div class="tb-gap"></div>
+    <div class="tb-search-wrap" id="searchWrap">
+      <svg class="tb-search-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input class="tb-search" type="text" id="searchInput" placeholder="Search words, meanings…" oninput="handleSearch()">
+    </div>
+    <div class="tb-acts">
+      <button class="tb-btn quiz" id="quizBtn" onclick="openQuiz()">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Quiz
+      </button>
+      <button class="tb-btn bk" onclick="showSelector()" id="switchBtn" style="display:none">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>Books
+      </button>
+    </div>
   </header>
-  <div class="reader-layout">
-    <aside class="reader-toc" id="bookToc"></aside>
-    <main class="reader-content" id="bookContent"></main>
-  </div>
-</div>
-
-<!-- Quiz Modal -->
-<div class="modal-overlay" id="quizModal">
-  <div class="quiz-shell">
-    <div id="quizSetup" class="quiz-screen active">
-      <div class="qs-inner">
-        <button class="quiz-back-btn" onclick="closeModal('quizModal')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> Back
-        </button>
-        <div class="qs-icon">🧠</div>
-        <h2 class="qs-title">Active Recall Quiz</h2>
-        <p class="qs-subtitle">Test yourself with flashcard-style questions</p>
-        <div class="qs-options">
-          <div class="qs-opt-group">
-            <label class="qs-opt-label">Quiz Scope</label>
-            <select class="qs-select" id="quizSection"><option value="">All Words</option></select>
-          </div>
-          <div class="qs-opt-group">
-            <label class="qs-opt-label">Question Type</label>
-            <div class="qs-type-grid">
-              <label class="qs-type-card"><input type="radio" name="quizType" value="en2bn" checked><span class="qtc-icon">🇬🇧→🇧🇩</span><span class="qtc-text">English → Bangla</span></label>
-              <label class="qs-type-card"><input type="radio" name="quizType" value="bn2en"><span class="qtc-icon">🇧🇩→🇬🇧</span><span class="qtc-text">Bangla → English</span></label>
-              <label class="qs-type-card"><input type="radio" name="quizType" value="def2en"><span class="qtc-icon">📖→🔤</span><span class="qtc-text">Definition → Word</span></label>
-              <label class="qs-type-card"><input type="radio" name="quizType" value="mixed"><span class="qtc-icon">🎲</span><span class="qtc-text">Mixed Mode</span></label>
-            </div>
-          </div>
-          <div class="qs-opt-group">
-            <label class="qs-opt-label">Number of Questions</label>
-            <div class="qs-count-row">
-              <button class="qs-count-btn" onclick="setQuizCount(5)">5</button>
-              <button class="qs-count-btn active" onclick="setQuizCount(10)">10</button>
-              <button class="qs-count-btn" onclick="setQuizCount(20)">20</button>
-              <button class="qs-count-btn" onclick="setQuizCount(999)">All</button>
-            </div>
-          </div>
-        </div>
-        <button class="qs-start-btn" onclick="startQuiz()">Start Quiz <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
-      </div>
-    </div>
-    <div id="quizPlay" class="quiz-screen">
-      <div class="qp-header">
-        <button class="quiz-back-btn" onclick="backToQuizSetup()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
-        <div class="qp-progress-wrap"><div class="qp-progress-bar"><div class="qp-progress-fill" id="quizProgressFill"></div></div><div class="qp-progress-txt" id="quizProgressTxt">1 / 10</div></div>
-        <div class="qp-score-badge" id="quizScoreBadge">0 ✓</div>
-      </div>
-      <div class="qp-body">
-        <div class="qp-type-label" id="quizTypeLabel">English → Bangla</div>
-        <div class="qp-card" id="quizCard">
-          <div class="qp-card-front" id="quizFront">
-            <div class="qp-word" id="quizWord"></div>
-            <button class="qp-tts-btn" id="quizTtsBtn" onclick="speakQuizWord()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
-            <div class="qp-hint" id="quizHint"></div>
-          </div>
-        </div>
-        <div class="qp-reveal-zone" id="quizRevealZone" style="display:none">
-          <div class="qp-answer-box" id="quizAnswerBox"></div>
-          <div class="qp-judge-row">
-            <button class="qp-judge-btn wrong" onclick="judgeAnswer(false)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Wrong</button>
-            <button class="qp-judge-btn right" onclick="judgeAnswer(true)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Correct</button>
-          </div>
-        </div>
-        <button class="qp-reveal-btn" id="quizRevealBtn" onclick="revealAnswer()">Reveal Answer <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
-      </div>
-    </div>
-    <div id="quizResults" class="quiz-screen">
-      <div class="qr-inner">
-        <div class="qr-trophy" id="quizTrophy">🏆</div>
-        <h2 class="qr-title" id="quizResultTitle">Quiz Complete!</h2>
-        <div class="qr-score-ring"><svg viewBox="0 0 100 100" class="qr-ring-svg"><circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="8"/><circle cx="50" cy="50" r="42" fill="none" stroke="var(--gold2)" stroke-width="8" stroke-dasharray="264" stroke-dashoffset="264" stroke-linecap="round" transform="rotate(-90 50 50)" id="quizRingFill" style="transition:stroke-dashoffset 1.2s cubic-bezier(0.4,0,0.2,1)"/></svg><div class="qr-ring-text"><div class="qr-pct" id="quizPct">0%</div><div class="qr-pct-lbl">score</div></div></div>
-        <div class="qr-stats" id="quizStats"></div>
-        <div class="qr-missed-section" id="quizMissedSection" style="display:none"><div class="qr-missed-title">Missed Words</div><div class="qr-missed-list" id="quizMissedList"></div></div>
-        <div class="qr-actions">
-          <button class="qr-btn secondary" onclick="backToQuizSetup()">New Quiz</button>
-          <button class="qr-btn primary" onclick="retryMissed()" id="quizRetryBtn" style="display:none">Retry Missed</button>
-          <button class="qr-btn secondary" onclick="closeModal('quizModal')">Close</button>
+  <div class="app-body">
+    <aside class="sidebar" id="sidebar">
+      <div class="sb-book">
+        <div class="sb-book-icon" id="sbIcon">📘</div>
+        <div>
+          <div class="sb-book-title" id="sbTitle">WordBook</div>
+          <div class="sb-book-sub bn" id="sbSub"></div>
         </div>
       </div>
+      <div id="sidebarNav"></div>
+    </aside>
+    <div class="content" id="mainContent">
+      <!-- Views rendered here -->
     </div>
   </div>
 </div>
 
-<div class="toast-wrap" id="toastWrap"></div>
+<!-- ══ QUIZ MODAL ══ -->
+<div class="quiz-overlay" id="quizModal">
+  <div class="quiz-shell" id="quizShell">
+    <!-- Screens injected by JS -->
+  </div>
+</div>
 
 <script>
-// ════════════════════════════════════════
-//  CONFIG — ⚠️ Update this path if needed
-// ════════════════════════════════════════
-const DATA_URL = './data/data.json';
+// ═══════════════════════════════════════════
+// CONSTANTS & STATE
+// ═══════════════════════════════════════════
+const BOOKS_INDEX = './books.json';
+let booksIndex = null;
+let D = null; // current book data
+let view = { type: 'home', unitId: null, lessonId: null, lessonTab: 'summary' };
+let posFilter = '';
+let searchQ = '';
+let sidebarOpen = false;
 
-// ════════════════════════════════════════
-//  STATE
-// ════════════════════════════════════════
-const POS_LABELS = { n:'Noun', v:'Verb', adj:'Adjective', adv:'Adverb', phrasal:'Phrasal Verb', other:'Other' };
-let S = { sections:[], words:[], meta:{} };
-let bookActiveSec = null;
-let bookPosFilter = '';
-const getSec = id => S.sections.find(s => s.id === id) || null;
+// Quiz state
+const QZ = {
+  pool: [], queue: [], idx: 0, score: 0, missed: [],
+  total: 10, type: 'en2bn', revealed: false,
+  matchLeft: [], matchRight: [], matchSel: null, matchDone: [],
+  fillAnswer: ''
+};
 
-// ════════════════════════════════════════
-//  LOAD DATA FROM words.json
-// ════════════════════════════════════════
-async function loadData() {
+// ═══════════════════════════════════════════
+// BOOT
+// ═══════════════════════════════════════════
+async function boot() {
   try {
-    const res = await fetch(DATA_URL + '?v=' + Date.now());
-    if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
-    const data = await res.json();
-    S.sections = data.sections || [];
-    S.words = data.words || [];
-    S.meta = data.meta || {};
-    // Update branding from meta
-    if (S.meta.title) document.getElementById('brandTitle').textContent = S.meta.title;
-    if (S.meta.subtitle) document.getElementById('brandBn').textContent = S.meta.subtitle;
-    // Hide loader, show reader
-    setTimeout(() => {
-      document.getElementById('loadScreen').classList.add('fade');
-      document.getElementById('readerWrap').style.display = 'block';
-      setTimeout(() => document.getElementById('loadScreen').style.display = 'none', 500);
-    }, 800);
-    renderBook();
-    populateQuizSection();
-  } catch(err) {
-    const errEl = document.getElementById('loadErr');
-    errEl.style.display = 'block';
-    errEl.innerHTML = `⚠️ Could not load vocabulary data.<br><strong>${err.message}</strong><br><br>
-      Make sure <code>data/words.json</code> exists next to this file.<br>
-      If running locally, use a local server (VS Code Live Server, or<br>
-      run: <code>npx serve .</code> in the project folder).`;
-  }
-}
-
-// ════════════════════════════════════════
-//  BOOK RENDER
-// ════════════════════════════════════════
-function renderBook() { renderBookToc(); renderBookContent(); }
-
-function renderBookToc() {
-  const isAll = bookActiveSec === null;
-  const items = S.sections.map(s => {
-    const cnt = S.words.filter(w => w.sectionId === s.id).length;
-    return `<div class="toc-ch-item${bookActiveSec===s.id?' active':''}" onclick="bookSelectSec('${s.id}')">
-      <div class="toc-ch-dot" style="background:${s.color}"></div>
-      <span class="toc-ch-name">${s.name}</span>
-      <span class="toc-ch-cnt">${cnt}</span>
-    </div>`;
-  }).join('');
-  document.getElementById('bookToc').innerHTML = `
-    <div class="toc-inner">
-      <div class="toc-bookinfo">
-        <div class="toc-book-name">${S.meta.title||'My Vocabulary Book'}</div>
-        <div class="toc-book-bn">${S.meta.subtitle||'শব্দ ভান্ডার'}</div>
-      </div>
-      <div style="padding:8px 0 4px">
-        <div class="toc-all-btn${isAll?' active':''}" onclick="bookSelectSec(null)">
-          <div class="toc-all-icon">📚</div>
-          <span class="toc-all-text">All Chapters</span>
-          <span class="toc-all-count">${S.words.length}</span>
-        </div>
-      </div>
-      <div class="toc-section-label">Chapters</div>
-      ${items}
-    </div>`;
-}
-
-function renderBookContent() {
-  const content = document.getElementById('bookContent');
-  const q = (document.getElementById('bookSearch').value||'').toLowerCase().trim();
-  let baseWords = S.words;
-  if (bookActiveSec) baseWords = baseWords.filter(w => w.sectionId === bookActiveSec);
-  if (q) baseWords = baseWords.filter(w =>
-    (w.word||'').toLowerCase().includes(q)||(w.bangla||'').includes(q)||
-    (w.denotation||'').toLowerCase().includes(q)||
-    (w.synonym?.en||'').toLowerCase().includes(q)||
-    (w.collocations||[]).some(c=>c.toLowerCase().includes(q))
-  );
-  const posCounts={};
-  baseWords.forEach(w=>{posCounts[w.pos]=(posCounts[w.pos]||0)+1;});
-  const poss=Object.keys(posCounts);
-  let words = bookPosFilter ? baseWords.filter(w=>w.pos===bookPosFilter) : baseWords;
-  const sec = bookActiveSec ? getSec(bookActiveSec) : null;
-  const pillsHtml = poss.length>1 ? `<div class="pos-pills">
-    <button class="pos-pill${bookPosFilter===''?' active':''}" onclick="bookSetPos('')">All <span style="opacity:.6;font-size:.68rem">(${baseWords.length})</span></button>
-    ${poss.map(p=>`<button class="pos-pill${bookPosFilter===p?' active':''}" onclick="bookSetPos('${p}')">${POS_LABELS[p]||p} <span style="opacity:.6;font-size:.68rem">(${posCounts[p]})</span></button>`).join('')}
-  </div>` : '';
-  let heading = sec ? `<div class="ch-header">
-    <div class="ch-label">Chapter</div>
-    <div class="ch-title">${sec.name}</div>
-    ${sec.desc?`<div class="ch-desc">${sec.desc}</div>`:''}
-    <div class="ch-meta"><div class="ch-meta-pill"><span style="color:${sec.color};font-size:.8rem">●</span>${baseWords.length} word${baseWords.length!==1?'s':''}</div></div>
-  </div>` : `<div class="ch-header">
-    <div class="ch-label">Complete Collection</div>
-    <div class="ch-title">All Vocabulary</div>
-    <div class="ch-desc">Every entry across all chapters, all in one place</div>
-    <div class="ch-meta">
-      <div class="ch-meta-pill">📖 ${S.words.length} words</div>
-      <div class="ch-meta-pill">📂 ${S.sections.length} chapters</div>
-    </div>
-  </div>`;
-  if (!words.length) {
-    content.innerHTML = heading+`<div style="margin-bottom:16px">${pillsHtml}</div><div class="empty-state"><div class="empty-icon">📭</div><p class="empty-text">No words found${q?` matching "<em>${q}</em>"`:''}${bookPosFilter?` for "${POS_LABELS[bookPosFilter]||bookPosFilter}"`:''}.</p></div>`;
+    const r = await fetch(BOOKS_INDEX + '?v=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    booksIndex = await r.json();
+  } catch(e) {
+    hideLd();
+    document.getElementById('mainContent').innerHTML =
+      `<div class="err-banner">⚠️ Could not load <code>books.json</code><br>${e.message}</div>`;
+    document.getElementById('app').style.display = 'flex';
+    document.getElementById('app').classList.add('show');
     return;
   }
-  const toolbar = `<div class="content-toolbar"><span class="ct-count">Showing <strong>${words.length}</strong>${bookPosFilter?' filtered':''} entr${words.length!==1?'ies':'y'}</span>${pillsHtml}</div>`;
-  let entriesHtml = '';
-  if (bookActiveSec) {
-    entriesHtml = `<div class="entries-list">${words.map((w,i)=>wordCardHtml(w,i)).join('')}</div>`;
+
+  await new Promise(r => setTimeout(r, 600));
+  hideLd();
+
+  const books = booksIndex.books || [];
+  if (books.length === 1) {
+    await loadBook(books[0]);
   } else {
-    const grouped={};const noSec=[];
-    words.forEach(w=>{if(w.sectionId&&getSec(w.sectionId)){(grouped[w.sectionId]=grouped[w.sectionId]||[]).push(w);}else noSec.push(w);});
-    S.sections.forEach(s=>{
-      if(!grouped[s.id])return;
-      entriesHtml+=`<div class="sec-divider"><div class="sec-div-accent" style="background:${s.color}"></div><div><div class="sec-div-title">${s.name}</div>${s.desc?`<div class="sec-div-desc">${s.desc}</div>`:''}</div><div class="sec-div-rule"></div><div class="sec-div-cnt">${grouped[s.id].length} words</div></div><div class="entries-list">${grouped[s.id].map((w,i)=>wordCardHtml(w,i)).join('')}</div>`;
-    });
-    if(noSec.length) entriesHtml+=`<div class="sec-divider"><div class="sec-div-accent" style="background:#8a7e6e"></div><div><div class="sec-div-title">Uncategorized</div></div><div class="sec-div-rule"></div><div class="sec-div-cnt">${noSec.length} words</div></div><div class="entries-list">${noSec.map((w,i)=>wordCardHtml(w,i)).join('')}</div>`;
+    showSelector();
   }
-  content.innerHTML = heading + toolbar + entriesHtml;
 }
 
-function wordCardHtml(w,i) {
-  const collocs=(w.collocations||[]).map(c=>`<span class="colloc-chip">${c}</span>`).join('');
-  const hier=(w.hypernym||w.hyponym)?`<div class="wc-row"><span class="wc-row-key">Hierarchy</span><span class="wc-row-val"><div class="hier-wrap">${w.hypernym?`<span class="hier-chip up"><span class="hier-arrow">↑</span>${w.hypernym}</span>`:''}${w.hyponym?`<span class="hier-chip down"><span class="hier-arrow">↓</span>${w.hyponym}</span>`:''}</div></span></div>`:'';
-  return `<div class="word-card" style="animation-delay:${Math.min(i,12)*.038}s" id="wcard-${w.id}">
-    <div class="wc-left">
-      <div class="wc-word-row">
-        <div class="wc-word">${w.word}</div>
-        <button class="tts-btn" onclick="speakWord('${w.id}')" title="Listen" aria-label="Pronounce ${w.word}">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-        </button>
+function hideLd() {
+  const el = document.getElementById('loadScr');
+  el.style.opacity = '0';
+  setTimeout(() => el.style.display = 'none', 400);
+}
+
+// ═══════════════════════════════════════════
+// BOOK SELECTOR
+// ═══════════════════════════════════════════
+function showSelector() {
+  hide('coverScr'); hide('app');
+  const books = booksIndex?.books || [];
+  document.getElementById('bsGrid').innerHTML = books.map(b => `
+    <div class="bcard" onclick="loadBook(${JSON.stringify(b).replace(/"/g,'&quot;')})">
+      <div class="bcard-icon" style="background:${b.accentColor}22">
+        ${b.icon || '📘'}
       </div>
-      ${w.pronounce?`<div class="wc-pronounce">${w.pronounce}</div>`:''}
-      <div class="wc-pos">${w.posLabel||POS_LABELS[w.pos]||w.pos}</div>
-      <div class="wc-bangla">${w.bangla}</div>
+      <div class="bcard-title">${b.title}</div>
+      <div class="bcard-sub bn">${b.subtitle || ''}</div>
+      <div class="bcard-meta">
+        ${b.targetExam ? `<span class="bcard-tag">${b.targetExam}</span>` : ''}
+        ${b.wordCount ? `<span class="bcard-tag">${b.wordCount} words</span>` : ''}
+        ${b.unitCount ? `<span class="bcard-tag">${b.unitCount} units</span>` : ''}
+      </div>
+      <div class="bcard-open">Open Book →</div>
     </div>
-    <div class="wc-right">
-      <div class="wc-def">${w.denotation}</div>
-      <div class="sa-grid">
-        <div class="sa-box syn"><div class="sa-label">Synonym</div><div class="sa-en">${w.synonym?.en||'—'}</div>${w.synonym?.bn?`<span class="sa-bn">${w.synonym.bn}</span>`:''}</div>
-        <div class="sa-box ant"><div class="sa-label">Antonym</div><div class="sa-en">${w.antonym?.en||'—'}</div>${w.antonym?.bn?`<span class="sa-bn">${w.antonym.bn}</span>`:''}</div>
+  `).join('');
+  showEl('bookSelector');
+}
+
+async function loadBook(bookMeta) {
+  hide('bookSelector');
+  showLd(bookMeta.title);
+  try {
+    const r = await fetch(bookMeta.file + '?v=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    D = await r.json();
+  } catch(e) {
+    hideLd();
+    alert('Could not load book: ' + e.message);
+    showSelector();
+    return;
+  }
+  await new Promise(r => setTimeout(r, 400));
+  hideLd();
+  buildCover();
+  showCover();
+}
+
+function showLd(title) {
+  document.getElementById('ldTitle').textContent = title || 'WordBook';
+  const ls = document.getElementById('loadScr');
+  ls.style.display = 'flex';
+  ls.style.opacity = '1';
+}
+
+// ═══════════════════════════════════════════
+// COVER SCREEN
+// ═══════════════════════════════════════════
+function buildCover() {
+  const m = D.meta || {};
+  const ac = m.accentColor || '#2f81f7';
+  const r = parseInt(ac.slice(1,3),16), g = parseInt(ac.slice(3,5),16), b = parseInt(ac.slice(5,7),16);
+
+  // background
+  if (m.coverImage) {
+    const img = document.getElementById('cvBgImg');
+    img.src = m.coverImage; img.style.display = 'block';
+    document.getElementById('cvBgColor').style.background = 'transparent';
+  } else {
+    document.getElementById('cvBgColor').style.background =
+      `radial-gradient(ellipse at 60% 30%, rgba(${r},${g},${b},.55) 0%, rgba(${Math.floor(r*.3)},${Math.floor(g*.3)},${Math.floor(b*.3)},.95) 70%)`;
+  }
+
+  // book icon
+  const cb = document.getElementById('cvBook');
+  cb.style.background = `linear-gradient(135deg,rgba(${r},${g},${b},.2),rgba(${r},${g},${b},.1))`;
+  if (m.coverImage) cb.innerHTML = `<img src="${m.coverImage}" style="width:100%;height:100%;object-fit:cover">`;
+  else cb.textContent = m.icon || '📘';
+
+  setTxt('cvExam', m.targetExam ? `${m.targetExam} ENGLISH VOCABULARY` : '');
+  document.getElementById('cvExam').style.color = ac;
+  setTxt('cvTitle', m.title || 'WordBook');
+  setTxt('cvSub', m.subtitle || '');
+  setTxt('cvAuthor', m.author ? 'by ' + m.author : '');
+
+  const div = document.getElementById('cvDiv');
+  div.style.background = `linear-gradient(to right, ${ac}, transparent)`;
+
+  const wm = document.getElementById('cvWelcome');
+  if (m.welcome) { wm.textContent = m.welcome; wm.style.display = 'block'; }
+  else wm.style.display = 'none';
+
+  const cta = document.getElementById('cvCta');
+  cta.style.background = `linear-gradient(135deg, ${ac}, ${ac}cc)`;
+
+  // stats
+  const units = getUnits();
+  const words = getAllWords();
+  document.getElementById('cvStats').innerHTML = `
+    <div class="cv-stat"><div class="cv-stat-n">${units.length}</div><div class="cv-stat-l">Units</div></div>
+    <div class="cv-stat"><div class="cv-stat-n">${getAllLessons().length}</div><div class="cv-stat-l">Lessons</div></div>
+    <div class="cv-stat"><div class="cv-stat-n">${words.length}</div><div class="cv-stat-l">Words</div></div>
+  `;
+
+  // show back button only if multiple books
+  const nb = (booksIndex?.books || []).length;
+  document.getElementById('cvBack').style.display = nb > 1 ? 'flex' : 'none';
+
+  // apply accent globally
+  document.documentElement.style.setProperty('--ac', ac);
+  document.documentElement.style.setProperty('--ac2', ac);
+  document.documentElement.style.setProperty('--ac-g', `rgba(${r},${g},${b},.12)`);
+  document.documentElement.style.setProperty('--ac-gb', `rgba(${r},${g},${b},.06)`);
+
+  buildApp();
+}
+
+function showCover() {
+  hide('app'); hide('bookSelector');
+  showEl('coverScr');
+}
+
+function enterReader() {
+  const cv = document.getElementById('coverScr');
+  cv.style.opacity = '0'; cv.style.transition = 'opacity .35s ease';
+  setTimeout(() => {
+    cv.style.display = 'none'; cv.style.opacity = ''; cv.style.transition = '';
+    document.getElementById('app').style.display = 'flex';
+    document.getElementById('app').classList.add('show');
+    navTo({ type: 'home' });
+  }, 350);
+}
+
+// ═══════════════════════════════════════════
+// DATA HELPERS
+// ═══════════════════════════════════════════
+function getParts() { return D?.parts || []; }
+function getUnitsPart() { return getParts().find(p => p.type === 'units') || null; }
+function getUnits() { return getUnitsPart()?.units || []; }
+function getUnit(id) { return getUnits().find(u => u.id === id) || null; }
+function getAllLessons() { return getUnits().flatMap(u => u.lessons || []); }
+function getLesson(id) { return getAllLessons().find(l => l.id === id) || null; }
+function getAllWords() { return getAllLessons().flatMap(l => l.words || []); }
+function getWord(id) { return getAllWords().find(w => w.id === id) || null; }
+const POS_LABEL = { n:'Noun', v:'Verb', adj:'Adjective', adv:'Adverb', phrasal:'Phrasal Verb', other:'Other' };
+
+// ═══════════════════════════════════════════
+// APP BUILD
+// ═══════════════════════════════════════════
+function buildApp() {
+  const m = D.meta || {};
+  // topbar
+  const ai = document.getElementById('appIcon');
+  if (m.coverImage) ai.innerHTML = `<img src="${m.coverImage}" style="width:100%;height:100%;object-fit:cover">`;
+  else ai.textContent = m.icon || '📘';
+  setTxt('appName', m.title || 'WordBook');
+
+  // sidebar header
+  const si = document.getElementById('sbIcon');
+  if (m.coverImage) si.innerHTML = `<img src="${m.coverImage}" style="width:100%;height:100%;object-fit:cover">`;
+  else si.textContent = m.icon || '📘';
+  setTxt('sbTitle', m.title || 'WordBook');
+  setTxt('sbSub', m.subtitle || '');
+
+  if (m.quizEnabled === false) document.getElementById('quizBtn').style.display = 'none';
+  if (!m.searchEnabled) document.getElementById('searchWrap').style.display = 'none';
+  if ((booksIndex?.books||[]).length > 1) document.getElementById('switchBtn').style.display = 'flex';
+
+  renderSidebar();
+}
+
+// ═══════════════════════════════════════════
+// SIDEBAR
+// ═══════════════════════════════════════════
+function renderSidebar() {
+  const parts = getParts();
+  let html = '';
+
+  html += `<div class="sb-section">
+    <div class="sb-sec-lbl">Overview</div>
+    <button class="sb-item${view.type==='home'?' on':''}" onclick="navTo({type:'home'})">
+      <span class="sb-item-icon">🏠</span>
+      <span class="sb-item-text">Book Home</span>
+    </button>
+  </div>`;
+
+  const unitsPart = getUnitsPart();
+  if (unitsPart) {
+    html += `<div class="sb-section"><div class="sb-sec-lbl">Units</div>`;
+    (unitsPart.units || []).forEach(u => {
+      const isUnitOn = view.unitId === u.id;
+      const isExpanded = isUnitOn || (u.lessons||[]).some(l => l.id === view.lessonId);
+      html += `<div class="sb-unit">
+        <button class="sb-unit-hd${isUnitOn?' on':''}${isExpanded?' expanded':''}" 
+          onclick="toggleUnit('${u.id}')">
+          <div class="sb-unit-num">U${u.number}</div>
+          <div class="sb-unit-title">${u.title}</div>
+          <span class="sb-unit-arr">›</span>
+        </button>
+        <div class="sb-lessons${isExpanded?' open':''}">
+          ${(u.lessons||[]).map(l => `
+            <button class="sb-lesson${view.lessonId===l.id?' on':''}" 
+              onclick="navTo({type:'lesson',unitId:'${u.id}',lessonId:'${l.id}'})">
+              <span class="sb-lesson-num">L${l.number}</span>
+              <span class="sb-lesson-title">${l.title}</span>
+            </button>
+          `).join('')}
+        </div>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  document.getElementById('sidebarNav').innerHTML = html;
+}
+
+function toggleUnit(uid) {
+  if (view.unitId === uid && view.type === 'unit') {
+    navTo({ type: 'home' });
+  } else {
+    navTo({ type: 'unit', unitId: uid });
+  }
+}
+
+// ═══════════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════════
+function navTo(v) {
+  view = { ...view, ...v };
+  if (v.type !== 'lesson') view.lessonId = v.lessonId || null;
+  if (v.type === 'home') { view.unitId = null; view.lessonId = null; }
+  renderSidebar();
+  renderContent();
+  closeSidebar();
+  document.querySelector('.content')?.scrollTo(0, 0);
+}
+
+function renderContent() {
+  const mc = document.getElementById('mainContent');
+  if (searchQ) { mc.innerHTML = renderSearch(); return; }
+  if (view.type === 'home') mc.innerHTML = renderHome();
+  else if (view.type === 'unit') mc.innerHTML = renderUnit();
+  else if (view.type === 'lesson') mc.innerHTML = renderLesson();
+  else mc.innerHTML = renderHome();
+  bindAccordions();
+}
+
+// ═══════════════════════════════════════════
+// VIEWS
+// ═══════════════════════════════════════════
+function renderHome() {
+  const m = D.meta || {};
+  const parts = getParts();
+  const units = getUnits();
+  const words = getAllWords();
+
+  const partsHtml = parts.map(p => `
+    <div class="part-card" onclick="handlePartClick('${p.id}')">
+      <div class="part-card-icon">${p.icon}</div>
+      <div class="part-card-title">${p.title}</div>
+      <div class="part-card-sub">${p.subtitle || ''}</div>
+    </div>
+  `).join('');
+
+  const unitsHtml = units.map(u => {
+    const wc = (u.lessons||[]).reduce((s,l) => s + (l.words||[]).length, 0);
+    return `
+    <div class="lesson-card" onclick="navTo({type:'unit',unitId:'${u.id}'})">
+      <div class="lesson-num">U${u.number}</div>
+      <div class="lesson-info">
+        <div class="lesson-title">${u.title}</div>
+        <div class="lesson-excerpt">${u.themeOverview?.centralIdea || ''}</div>
+        <div class="lesson-meta">
+          <span class="lesson-badge">${(u.lessons||[]).length} lessons</span>
+          <span class="lesson-badge">${wc} words</span>
+        </div>
       </div>
-      ${hier}
-      ${collocs?`<div class="wc-row"><span class="wc-row-key">Collocations</span><span class="wc-row-val"><div class="colloc-wrap">${collocs}</div></span></div>`:''}
+    </div>`;
+  }).join('');
+
+  return `<div class="view on">
+    <div class="pg-header">
+      <div class="pg-label" style="color:var(--ac2)">${m.targetExam || ''} VOCABULARY SYSTEM</div>
+      <h1 class="pg-title">${m.title || 'WordBook'}</h1>
+      <p class="pg-desc">${m.welcome || ''}</p>
+      <div class="pg-meta">
+        <span class="pg-tag">📚 ${units.length} Units</span>
+        <span class="pg-tag">📖 ${getAllLessons().length} Lessons</span>
+        <span class="pg-tag">🔤 ${words.length} Words</span>
+        ${m.author ? `<span class="pg-tag">✍️ ${m.author}</span>` : ''}
+      </div>
+    </div>
+    <div class="divider"></div>
+    <h3 style="font-family:var(--ff);font-size:.88rem;font-weight:700;color:var(--tx2);margin-bottom:12px;letter-spacing:.05em">BOOK STRUCTURE</h3>
+    <div class="parts-grid">${partsHtml}</div>
+    <h3 style="font-family:var(--ff);font-size:.88rem;font-weight:700;color:var(--tx2);margin-bottom:12px;letter-spacing:.05em">ALL UNITS</h3>
+    <div class="lessons-list">${unitsHtml}</div>
+  </div>`;
+}
+
+function handlePartClick(pid) {
+  const p = getParts().find(x => x.id === pid);
+  if (!p) return;
+  if (p.type === 'units') { navTo({ type: 'home' }); return; }
+  alert(`"${p.title}" section coming soon.`);
+}
+
+function renderUnit() {
+  const unit = getUnit(view.unitId);
+  if (!unit) return '<div class="view on"><div class="empty"><div class="empty-i">🔍</div><div class="empty-t">Unit not found.</div></div></div>';
+  const ov = unit.themeOverview || {};
+
+  const sfHtml = (unit.semanticFields || []).map(sf => renderSemanticMap(sf)).join('');
+
+  const lessonsHtml = (unit.lessons || []).map(l => {
+    const wc = (l.words||[]).length;
+    return `<div class="lesson-card" onclick="navTo({type:'lesson',unitId:'${unit.id}',lessonId:'${l.id}'})">
+      <div class="lesson-num">L${l.number}</div>
+      <div class="lesson-info">
+        <div class="lesson-title">${l.title}</div>
+        <div class="lesson-excerpt">${l.summary ? l.summary.slice(0,140)+'…' : ''}</div>
+        <div class="lesson-meta">
+          <span class="lesson-badge">${wc} word${wc!==1?'s':''}</span>
+          ${l.keyIdeas?.tone ? `<span class="lesson-badge">${l.keyIdeas.tone}</span>` : ''}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  return `<div class="view on">
+    <div class="pg-header">
+      <div class="pg-breadcrumb">
+        <span class="pg-bc-link" onclick="navTo({type:'home'})">Home</span>
+        <span class="pg-bc-sep">›</span>
+        <span>Unit ${unit.number}</span>
+      </div>
+      <div class="pg-label" style="color:var(--ac2)">UNIT ${unit.number}</div>
+      <h1 class="pg-title">${unit.title}</h1>
+    </div>
+
+    <div class="unit-overview">
+      <div class="ov-grid">
+        <div class="ov-item">
+          <div class="ov-label">Central Idea</div>
+          <div class="ov-text">${ov.centralIdea || '—'}</div>
+        </div>
+        <div class="ov-item">
+          <div class="ov-label">Cultural Meaning</div>
+          <div class="ov-text">${ov.culturalMeaning || '—'}</div>
+        </div>
+        <div class="ov-item">
+          <div class="ov-label">Moral Lesson</div>
+          <div class="ov-text">${ov.moralLesson || '—'}</div>
+        </div>
+      </div>
+    </div>
+
+    ${sfHtml}
+
+    <h3 style="font-family:var(--ff);font-size:.88rem;font-weight:700;color:var(--tx2);margin-bottom:12px;letter-spacing:.05em">LESSONS IN THIS UNIT</h3>
+    <div class="lessons-list">${lessonsHtml}</div>
+  </div>`;
+}
+
+function renderSemanticMap(sf) {
+  const subHtml = (sf.subFields || []).map(sub => `
+    <div class="sem-sub">
+      <div class="sem-sub-name">${sub.name}</div>
+      <div class="sem-sub-words">
+        ${(sub.words||[]).map(w => `<span class="sem-sub-word">${w}</span>`).join('')}
+      </div>
+    </div>
+  `).join('');
+  return `
+    <div class="sem-map">
+      <div class="sem-title">🗺 SEMANTIC FIELD MAP — ${sf.title}</div>
+      <div class="sem-core-row">
+        <span class="sem-core-lbl">Core Field →</span>
+        <div class="sem-core-words">
+          ${(sf.coreField||[]).map(w => `<span class="sem-core-word">${w}</span>`).join('')}
+        </div>
+      </div>
+      <div class="sem-sub-grid">${subHtml}</div>
+    </div>`;
+}
+
+function renderLesson() {
+  const lesson = getLesson(view.lessonId);
+  const unit = getUnit(view.unitId);
+  if (!lesson) return '<div class="view on"><div class="empty"><div class="empty-i">🔍</div><div class="empty-t">Lesson not found.</div></div></div>';
+
+  const tabs = [
+    { id:'summary', label:'A–B Summary', icon:'📄' },
+    { id:'vocab', label:'C–D Words', icon:'🔤' },
+    { id:'contextual', label:'E Usage', icon:'✍️' },
+    { id:'network', label:'F Semantic', icon:'🗺' },
+    { id:'practice', label:'G Practice', icon:'✏️' },
+    { id:'wordcards', label:'Word Cards', icon:'🃏' },
+  ];
+
+  const tabsHtml = tabs.map(t =>
+    `<button class="ltab${view.lessonTab===t.id?' on':''}" onclick="switchLessonTab('${t.id}')">${t.icon} ${t.label}</button>`
+  ).join('');
+
+  return `<div class="view on">
+    <div class="pg-header">
+      <div class="pg-breadcrumb">
+        <span class="pg-bc-link" onclick="navTo({type:'home'})">Home</span>
+        <span class="pg-bc-sep">›</span>
+        <span class="pg-bc-link" onclick="navTo({type:'unit',unitId:'${unit?.id}'})">Unit ${unit?.number}: ${unit?.title}</span>
+        <span class="pg-bc-sep">›</span>
+        <span>Lesson ${lesson.number}</span>
+      </div>
+      <div class="pg-label" style="color:var(--ac2)">LESSON ${lesson.number}</div>
+      <h1 class="pg-title">${lesson.title}</h1>
+    </div>
+
+    <div class="lesson-tabs">${tabsHtml}</div>
+
+    <div class="lesson-panel${view.lessonTab==='summary'?' on':''}" id="lp-summary">
+      ${renderLessonSummary(lesson)}
+    </div>
+    <div class="lesson-panel${view.lessonTab==='vocab'?' on':''}" id="lp-vocab">
+      ${renderLessonVocab(lesson)}
+    </div>
+    <div class="lesson-panel${view.lessonTab==='contextual'?' on':''}" id="lp-contextual">
+      ${renderLessonContextual(lesson)}
+    </div>
+    <div class="lesson-panel${view.lessonTab==='network'?' on':''}" id="lp-network">
+      ${renderLessonNetwork(lesson)}
+    </div>
+    <div class="lesson-panel${view.lessonTab==='practice'?' on':''}" id="lp-practice">
+      ${renderLessonPractice(lesson)}
+    </div>
+    <div class="lesson-panel${view.lessonTab==='wordcards'?' on':''}" id="lp-wordcards">
+      ${renderWordCards(lesson.words || [])}
     </div>
   </div>`;
 }
 
-function bookSelectSec(id){bookActiveSec=id;renderBook();}
-function bookSetPos(p){bookPosFilter=p;renderBookContent();}
+function switchLessonTab(tab) {
+  view.lessonTab = tab;
+  document.querySelectorAll('.ltab').forEach((b, i) => {
+    const tabs = ['summary','vocab','contextual','network','practice','wordcards'];
+    b.classList.toggle('on', tabs[i] === tab);
+  });
+  document.querySelectorAll('.lesson-panel').forEach(p => {
+    p.classList.toggle('on', p.id === 'lp-' + tab);
+  });
+}
 
-// ════════════════════════════════════════
-//  TTS
-// ════════════════════════════════════════
-let ttsActive=null;
-function speakWord(wordId){
-  const w=S.words.find(x=>x.id===wordId);
-  if(!w||!window.speechSynthesis){toast('TTS not supported','e');return;}
+function renderLessonSummary(lesson) {
+  const ki = lesson.keyIdeas || {};
+  return `
+    <div class="summary-card">
+      <div class="sc-label">A. Text Summary</div>
+      <div class="sc-text">${lesson.summary || '—'}</div>
+    </div>
+    <div class="key-ideas-grid">
+      <div class="ki">
+        <div class="ki-label" style="color:var(--ac2)">Theme</div>
+        <div class="ki-text">${ki.theme || '—'}</div>
+      </div>
+      <div class="ki">
+        <div class="ki-label" style="color:var(--grn)">Message</div>
+        <div class="ki-text">${ki.message || '—'}</div>
+      </div>
+      <div class="ki">
+        <div class="ki-label" style="color:var(--gold)">Tone</div>
+        <div class="ki-text">${ki.tone || '—'}</div>
+      </div>
+    </div>`;
+}
+
+function renderLessonVocab(lesson) {
+  const wc = lesson.wordCategories || {};
+  const extr = lesson.vocabularyExtraction || [];
+  return `
+    <div class="summary-card" style="margin-bottom:16px">
+      <div class="sc-label">C. Vocabulary Extraction</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">
+        ${extr.map(w => `<span class="cat-word" onclick="searchWord('${w}')">${w}</span>`).join('')}
+      </div>
+    </div>
+    <div class="cat-grid">
+      ${renderCatBox('D1. Nouns', wc.nouns||[], 'color:var(--ac2)')}
+      ${renderCatBox('D2. Verbs', wc.verbs||[], 'color:var(--grn)')}
+      ${renderCatBox('D3. Adjectives', wc.adjectives||[], 'color:var(--gold)')}
+      ${renderCatBox('D4. Adverbs', wc.adverbs||[], 'color:var(--pur)')}
+    </div>`;
+}
+
+function renderCatBox(label, words, style) {
+  return `<div class="cat-box">
+    <div class="cat-label" style="${style}">${label}</div>
+    <div class="cat-words">
+      ${words.map(w => `<span class="cat-word" onclick="searchWord('${w}')">${w}</span>`).join('')}
+    </div>
+  </div>`;
+}
+
+function renderLessonContextual(lesson) {
+  const cu = lesson.contextualUsage || [];
+  if (!cu.length) return '<div class="empty"><div class="empty-i">✍️</div><div class="empty-t">No contextual usage data for this lesson.</div></div>';
+  return cu.map(c => `
+    <div class="cu-item">
+      <div class="cu-word">E. ${c.word}</div>
+      <div class="cu-quote">${c.usage}</div>
+      <div class="cu-why"><strong style="color:var(--tx2)">Why this word?</strong> ${c.explanation}</div>
+    </div>
+  `).join('');
+}
+
+function renderLessonNetwork(lesson) {
+  const sn = lesson.semanticNetwork || {};
+  const sfHtml = (getUnit(view.unitId)?.semanticFields||[]).map(sf => renderSemanticMap(sf)).join('');
+  return `
+    <div class="sn-row">
+      <div class="sn-box">
+        <div class="sn-label">F1. Related Words (Family/Loss)</div>
+        <div class="sn-words">
+          ${(sn.relatedWords||[]).map(w => `<span class="sn-word">${w}</span>`).join('')}
+        </div>
+      </div>
+      <div class="sn-box">
+        <div class="sn-label">F3. Field of Meaning — ${sn.fieldOfMeaning||''}</div>
+        <div class="sn-words">
+          ${(sn.fieldWords||[]).map(w => `<span class="sn-word">${w}</span>`).join('')}
+        </div>
+      </div>
+    </div>
+    <div class="summary-card">
+      <div class="sc-label">F2. Opposites in Context</div>
+      ${(sn.opposites||[]).map(o => `
+        <div class="opp-pair">
+          <div class="opp-w">${o.word1}</div>
+          <div class="opp-m" style="color:var(--tx4)">${o.meaning1}</div>
+          <span class="opp-vs">vs</span>
+          <div class="opp-w">${o.word2}</div>
+          <div class="opp-m" style="color:var(--tx4)">${o.meaning2}</div>
+        </div>
+      `).join('')}
+    </div>
+    ${sfHtml}`;
+}
+
+function renderLessonPractice(lesson) {
+  const practices = lesson.practice || [];
+  if (!practices.length) return '<div class="empty"><div class="empty-i">✏️</div><div class="empty-t">Practice exercises coming soon.</div></div>';
+  return practices.map((p, i) => {
+    const typeLabel = { fill_blank:'Fill in the Blank', sentence_making:'Sentence Making', paraphrase:'Paraphrasing' }[p.type] || p.type;
+    const typeColor = { fill_blank:'color:var(--ac2)', sentence_making:'color:var(--grn)', paraphrase:'color:var(--gold)' }[p.type] || '';
+    let body = '';
+    if (p.type === 'fill_blank') {
+      const q = (p.question||'').replace(/_+/g, '<span class="blank">_____</span>');
+      body = `<div class="pi-q">${q}</div>`;
+    } else if (p.type === 'sentence_making') {
+      body = `<div class="pi-q">${p.instruction}</div>`;
+    } else {
+      body = `<div class="pi-q" style="font-style:italic;border-left:3px solid var(--gold);padding-left:12px">"${p.original}"</div><div class="pi-q" style="margin-top:8px">${p.instruction}</div>`;
+    }
+    return `<div class="practice-item">
+      <div class="pi-type" style="${typeColor}">G${i+1}. ${typeLabel}</div>
+      ${body}
+      <button class="pi-ans-btn" onclick="toggleAns(this)">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        Show Sample Answer
+      </button>
+      <div class="pi-answer">${p.sampleAnswer || (p.answers||[]).join(', ')}</div>
+    </div>`;
+  }).join('');
+}
+
+function toggleAns(btn) {
+  const ans = btn.nextElementSibling;
+  ans.classList.toggle('show');
+  btn.innerHTML = ans.classList.contains('show')
+    ? '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/></svg> Hide Answer'
+    : '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Show Sample Answer';
+}
+
+// ═══════════════════════════════════════════
+// WORD CARDS
+// ═══════════════════════════════════════════
+function renderWordCards(words) {
+  if (!words.length) return '<div class="empty"><div class="empty-i">📭</div><div class="empty-t">No words in this lesson yet.</div></div>';
+  const posTypes = [...new Set(words.map(w => w.pos))];
+  const filtered = posFilter ? words.filter(w => w.pos === posFilter) : words;
+  const pillsHtml = posTypes.length > 1 ? `
+    <div class="wh-filters">
+      <button class="wf-pill${!posFilter?' on':''}" onclick="setPosF('')">All</button>
+      ${posTypes.map(p => `<button class="wf-pill${posFilter===p?' on':''}" onclick="setPosF('${p}')">${POS_LABEL[p]||p}</button>`).join('')}
+    </div>` : '';
+  return `
+    <div class="words-header">
+      <div class="wh-title">${filtered.length} word entr${filtered.length!==1?'ies':'y'}</div>
+      ${pillsHtml}
+    </div>
+    <div class="words-list">
+      ${filtered.map((w,i) => wordCardHtml(w, i)).join('')}
+    </div>`;
+}
+
+function wordCardHtml(w, i) {
+  const hasTts = D.meta?.ttsEnabled !== false;
+  const d = Math.min(i, 8) * 0.04;
+  const ml = w.meaningLayers || {};
+  const lr = w.lexicalRelations || {};
+  const mo = w.morphology || {};
+  const ui = w.usageInLesson || {};
+
+  const secs = [
+    {
+      id: `ml-${w.id}`, icon: '🔍', label: 'Meaning Layers',
+      html: `<div class="ml-grid">
+        ${ml.literal ? `<div class="ml-item"><div class="ml-dot" style="background:var(--ac)"></div><div class="ml-lbl">Literal</div><div class="ml-text">${ml.literal}</div></div>` : ''}
+        ${ml.contextual ? `<div class="ml-item"><div class="ml-dot" style="background:var(--gold)"></div><div class="ml-lbl">Contextual</div><div class="ml-text">${ml.contextual}</div></div>` : ''}
+        ${ml.connotation ? `<div class="ml-item"><div class="ml-dot" style="background:var(--pur)"></div><div class="ml-lbl">Connotation</div><div class="ml-text">${ml.connotation}</div></div>` : ''}
+      </div>`
+    },
+    {
+      id: `lr-${w.id}`, icon: '🔗', label: 'Lexical Relations',
+      html: `<div class="lr-grid">
+        <div class="lr-item"><div class="lr-lbl">Synonyms</div><div class="lr-words">${(lr.synonyms||[]).map(s=>`<span class="lr-word syn">${s}</span>`).join('')||'—'}</div></div>
+        <div class="lr-item"><div class="lr-lbl">Antonyms</div><div class="lr-words">${(lr.antonyms||[]).map(s=>`<span class="lr-word ant">${s}</span>`).join('')||'—'}</div></div>
+        <div class="lr-item"><div class="lr-lbl">Hypernym</div><div class="lr-words">${lr.hypernym?`<span class="lr-word hyp">${lr.hypernym}</span>`:'—'}</div></div>
+        <div class="lr-item"><div class="lr-lbl">Hyponyms</div><div class="lr-words">${(lr.hyponyms||[]).map(s=>`<span class="lr-word hypo">${s}</span>`).join('')||'—'}</div></div>
+      </div>`
+    },
+    {
+      id: `mo-${w.id}`, icon: '⚗️', label: 'Morphology',
+      html: `<div class="morph-grid">
+        ${mo.root ? `<div class="morph-item"><span class="morph-lbl">Root</span><span class="morph-val">${mo.root}</span></div>` : ''}
+        ${mo.derivatives?.length ? `<div class="morph-item"><span class="morph-lbl">Derivatives</span><div class="morph-deriv">${mo.derivatives.map(d=>`<span class="deriv-chip">${d}</span>`).join('')}</div></div>` : ''}
+        ${mo.forms ? `<div class="morph-item"><span class="morph-lbl">Forms</span><span class="morph-val">${Object.entries(mo.forms).filter(([k,v])=>v&&v!=='—').map(([k,v])=>`<em style="color:var(--tx3)">${k}:</em> ${v}`).join(' · ')}</span></div>` : ''}
+      </div>`
+    },
+    {
+      id: `col-${w.id}`, icon: '📎', label: 'Collocations',
+      html: `<div class="col-list">${(w.collocations||[]).map(c=>`<span class="col-chip">${c}</span>`).join('')||'—'}</div>`
+    },
+    {
+      id: `ul-${w.id}`, icon: '📚', label: 'Usage in Lesson',
+      html: `${ui.originalSentence?`<div class="ul-quote">"${ui.originalSentence}"</div>`:''}
+             ${ui.explanation?`<div class="ul-explanation">${ui.explanation}</div>`:''}`
+    },
+    {
+      id: `ex-${w.id}`, icon: '✍️', label: 'Example Sentences',
+      html: `<div class="ex-list">${(w.exampleSentences||[]).map((s,i)=>`<div class="ex-item"><span class="ex-num">${i+1}.</span><span class="ex-text">${s}</span></div>`).join('')}</div>`
+    },
+    {
+      id: `cg-${w.id}`, icon: '🧠', label: 'Cognitive Image',
+      html: w.cognitiveImage ? `<div class="cog-box"><span class="cog-icon">💭</span><span>${w.cognitiveImage}</span></div>` : '—'
+    },
+    {
+      id: `ce-${w.id}`, icon: '⚠️', label: 'Common Errors',
+      html: (w.commonErrors||[]).map(e=>`<div class="err-item"><div class="err-title">⚠️ ${e.error}</div><div class="err-text">${e.explanation}</div></div>`).join('')||'—'
+    }
+  ];
+
+  const secsHtml = secs.map(s => `
+    <div class="ws" id="ws-${s.id}">
+      <div class="ws-toggle" onclick="toggleWS('ws-${s.id}')">
+        <div class="ws-toggle-left">
+          <span class="ws-ico">${s.icon}</span>
+          <span class="ws-lbl">${s.label}</span>
+        </div>
+        <span class="ws-arr">▾</span>
+      </div>
+      <div class="ws-body">${s.html}</div>
+    </div>
+  `).join('');
+
+  return `
+  <div class="wcard" style="animation-delay:${d}s" id="wcard-${w.id}">
+    <div class="wcard-header">
+      <div class="wcard-left">
+        <div class="wcard-num">WORD CARD ${w.number || (i+1)}</div>
+        <div class="wcard-word-row">
+          <div class="wcard-word">${w.word}</div>
+          ${hasTts ? `<button class="wcard-tts" onclick="spk('${w.id}')" title="Pronounce">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          </button>` : ''}
+        </div>
+        ${w.pronunciation ? `<div class="wcard-pr">${w.pronunciation}</div>` : ''}
+        <div class="wcard-pos">${w.posLabel || POS_LABEL[w.pos] || w.pos}</div>
+      </div>
+      <div class="wcard-right">
+        <div class="wcard-cardnum">#${w.number || (i+1)}</div>
+        <div class="wcard-bangla bn">${w.bangla}</div>
+      </div>
+    </div>
+    <div class="wcard-body">
+      <div class="wcard-def">${w.academicDefinition || w.denotation || ''}</div>
+      <div class="wcard-sections">${secsHtml}</div>
+    </div>
+  </div>`;
+}
+
+function toggleWS(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle('open');
+}
+function bindAccordions() {}
+
+function setPosF(p) {
+  posFilter = p;
+  const lesson = getLesson(view.lessonId);
+  if (lesson) {
+    document.getElementById('lp-wordcards').innerHTML = renderWordCards(lesson.words || []);
+  }
+}
+
+// ═══════════════════════════════════════════
+// SEARCH
+// ═══════════════════════════════════════════
+function handleSearch() {
+  searchQ = (document.getElementById('searchInput')?.value || '').toLowerCase().trim();
+  renderContent();
+}
+
+function renderSearch() {
+  const q = searchQ;
+  const words = getAllWords().filter(w =>
+    (w.word||'').toLowerCase().includes(q) ||
+    (w.bangla||'').includes(q) ||
+    (w.academicDefinition||'').toLowerCase().includes(q) ||
+    (w.pronunciation||'').includes(q) ||
+    (w.collocations||[]).some(c => c.toLowerCase().includes(q))
+  );
+  if (!words.length) return `<div class="view on"><div class="empty"><div class="empty-i">🔍</div><div class="empty-t">No results for "<strong>${q}</strong>".</div></div></div>`;
+  return `<div class="view on">
+    <div class="pg-header">
+      <h1 class="pg-title">Search: "${q}"</h1>
+      <p class="pg-desc">${words.length} result${words.length!==1?'s':''} found</p>
+    </div>
+    <div class="words-list">${words.map((w,i)=>wordCardHtml(w,i)).join('')}</div>
+  </div>`;
+}
+
+function searchWord(word) {
+  const inp = document.getElementById('searchInput');
+  if (inp) { inp.value = word; searchQ = word.toLowerCase(); renderContent(); }
+}
+
+// ═══════════════════════════════════════════
+// TTS
+// ═══════════════════════════════════════════
+let ttsActive = null;
+function spk(id) {
+  const w = getAllWords().find(x => x.id === id);
+  if (!w || !window.speechSynthesis) return;
   window.speechSynthesis.cancel();
-  const utt=new SpeechSynthesisUtterance(w.word);
-  utt.lang='en-US';utt.rate=0.88;
-  const voices=window.speechSynthesis.getVoices();
-  const eng=voices.find(v=>v.lang.startsWith('en')&&v.localService)||voices.find(v=>v.lang.startsWith('en'));
-  if(eng)utt.voice=eng;
-  const btn=document.querySelector(`#wcard-${wordId} .tts-btn`);
-  if(btn){btn.classList.add('speaking');ttsActive=btn;}
-  utt.onend=utt.onerror=()=>{if(ttsActive){ttsActive.classList.remove('speaking');ttsActive=null;}};
-  window.speechSynthesis.speak(utt);
+  const u = new SpeechSynthesisUtterance(w.word);
+  u.lang = 'en-US'; u.rate = 0.85;
+  const vs = window.speechSynthesis.getVoices();
+  const v = vs.find(x => x.lang.startsWith('en') && x.localService) || vs.find(x => x.lang.startsWith('en'));
+  if (v) u.voice = v;
+  const btn = document.querySelector(`#wcard-${id} .wcard-tts`);
+  if (btn) { btn.classList.add('sp'); ttsActive = btn; }
+  u.onend = u.onerror = () => { ttsActive?.classList.remove('sp'); ttsActive = null; };
+  window.speechSynthesis.speak(u);
 }
-function speakQuizWord(){
-  const w=quizState.queue[quizState.current];
-  if(!w||!window.speechSynthesis)return;
+if (window.speechSynthesis) window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+
+// ═══════════════════════════════════════════
+// QUIZ ENGINE
+// ═══════════════════════════════════════════
+const QTYPES = [
+  { id:'en2bn', icon:'🇬🇧→🇧🇩', name:'English → Bangla', desc:'See the word, give its Bangla meaning' },
+  { id:'bn2en', icon:'🇧🇩→🇬🇧', name:'Bangla → English', desc:'See the Bangla, guess the English word' },
+  { id:'def2en', icon:'📖→🔤', name:'Definition → Word', desc:'Read the definition, name the word' },
+  { id:'col2en', icon:'📎→🔤', name:'Collocation Fill', desc:'Complete the collocation phrase' },
+  { id:'syn', icon:'🔗', name:'Synonym Match', desc:'Match words with their synonyms' },
+  { id:'ant', icon:'↔️', name:'Antonym Match', desc:'Match words with their antonyms' },
+  { id:'morph', icon:'⚗️', name:'Morphology', desc:'Complete the word family chain' },
+  { id:'usage', icon:'📚', name:'Contextual Usage', desc:'Fill the blank in the lesson sentence' },
+  { id:'error', icon:'⚠️', name:'Error Spotter', desc:'Identify the common usage error' },
+  { id:'mixed', icon:'🎲', name:'Mixed Mode', desc:'Random mix of all question types' },
+];
+
+function openQuiz() {
+  const units = getUnits();
+  const secOpts = `<option value="">All Words</option>
+    ${units.map(u => `<option value="${u.id}">Unit ${u.number}: ${u.title}</option>`).join('')}
+    ${getAllLessons().map(l => `<option value="l:${l.id}">Lesson ${l.number}: ${l.title}</option>`).join('')}`;
+
+  const qtypesHtml = QTYPES.map(t => `
+    <label class="qtype">
+      <input type="radio" name="qtype" value="${t.id}" ${t.id==='en2bn'?'checked':''}>
+      <span class="qtype-icon">${t.icon}</span>
+      <div class="qtype-info">
+        <div class="qtype-name">${t.name}</div>
+        <div class="qtype-desc">${t.desc}</div>
+      </div>
+    </label>
+  `).join('');
+
+  document.getElementById('quizShell').innerHTML = `
+    <div class="qs-header">
+      <div class="qs-title">🧠 Active Recall Quiz</div>
+      <button class="qs-close" onclick="closeQuiz()">✕</button>
+    </div>
+    <div class="qs-body">
+      <div class="qs-row">
+        <div class="qs-lbl">Quiz Scope</div>
+        <select class="qs-select" id="qzScope">${secOpts}</select>
+      </div>
+      <div class="qs-row">
+        <div class="qs-lbl">Question Type</div>
+        <div class="qtype-grid">${qtypesHtml}</div>
+      </div>
+      <div class="qs-row">
+        <div class="qs-lbl">Number of Questions</div>
+        <div class="qcount-row">
+          ${[5,10,20,'All'].map(n => `<button class="qcnt${n===10?' on':''}" onclick="setQCnt(${n==='All'?999:n},this)">${n}</button>`).join('')}
+        </div>
+      </div>
+      <button class="qs-start" onclick="startQuiz()">Start Quiz →</button>
+    </div>`;
+  QZ.total = 10;
+  document.getElementById('quizModal').classList.add('open');
+}
+
+function closeQuiz() {
+  window.speechSynthesis?.cancel();
+  document.getElementById('quizModal').classList.remove('open');
+}
+
+function setQCnt(n, btn) {
+  QZ.total = n;
+  document.querySelectorAll('.qcnt').forEach(b => b.classList.toggle('on', b === btn));
+}
+
+function startQuiz() {
+  const scope = document.getElementById('qzScope').value;
+  const type = document.querySelector('input[name="qtype"]:checked')?.value || 'en2bn';
+  let pool = getAllWords().filter(w => w.word && w.bangla);
+
+  if (scope.startsWith('l:')) {
+    const lid = scope.slice(2);
+    pool = pool.filter(w => getLesson(lid)?.words?.some(lw => lw.id === w.id));
+  } else if (scope) {
+    const unit = getUnit(scope);
+    if (unit) pool = pool.filter(w => (unit.lessons||[]).some(l => (l.words||[]).some(lw => lw.id === w.id)));
+  }
+
+  if (!pool.length) { alert('No words found for this scope.'); return; }
+  pool = pool.sort(() => Math.random() - .5);
+  const n = Math.min(QZ.total, pool.length);
+  QZ.queue = pool.slice(0, n);
+  QZ.pool = pool;
+  QZ.idx = 0; QZ.score = 0; QZ.missed = [];
+  QZ.type = type;
+  renderQPlay();
+}
+
+function getQType() {
+  if (QZ.type === 'mixed') {
+    const types = ['en2bn','bn2en','def2en','col2en','usage'];
+    return types[Math.floor(Math.random() * types.length)];
+  }
+  return QZ.type;
+}
+
+function renderQPlay() {
+  if (QZ.idx >= QZ.queue.length) { renderQResults(); return; }
+  const w = QZ.queue[QZ.idx];
+  const tot = QZ.queue.length;
+  const pct = QZ.idx / tot * 100;
+  const ctype = getQType();
+  QZ.ctype = ctype;
+  QZ.revealed = false;
+
+  let prompt = '', hint = '', isWord = false, isBn = false, isDef = false;
+  if (ctype === 'en2bn') { prompt = w.word; hint = w.pronunciation||''; isWord = true; }
+  else if (ctype === 'bn2en') { prompt = w.bangla; hint = 'POS: '+(POS_LABEL[w.pos]||w.pos); isBn = true; }
+  else if (ctype === 'def2en') { prompt = w.academicDefinition || w.denotation || ''; hint = 'POS: '+(POS_LABEL[w.pos]||w.pos); isDef = true; }
+  else if (ctype === 'col2en') {
+    const col = (w.collocations||[])[0];
+    if (col) { prompt = col.replace(w.word.toLowerCase(), '_____').replace(w.word, '_____') || col; hint = 'Fill in the collocation'; }
+    else { prompt = w.word; hint = ''; isWord = true; }
+  } else if (ctype === 'usage') {
+    const ui = w.usageInLesson?.originalSentence || '';
+    const regex = new RegExp(w.word, 'gi');
+    prompt = ui ? ui.replace(regex, '_____') : w.word;
+    hint = 'Fill in the blank from the lesson';
+    isDef = true;
+  } else if (ctype === 'syn' || ctype === 'ant') {
+    prompt = w.word; hint = ctype === 'syn' ? 'Give a synonym' : 'Give an antonym'; isWord = true;
+  } else if (ctype === 'morph') {
+    prompt = w.word; hint = 'Name a derivative form'; isWord = true;
+  } else if (ctype === 'error') {
+    const err = (w.commonErrors||[])[0];
+    prompt = err ? 'Error: ' + err.error : w.word; hint = 'Identify the correct usage'; isDef = true;
+  }
+
+  const lbl = { en2bn:'English → Bangla', bn2en:'Bangla → English', def2en:'Definition → Word', col2en:'Collocation Fill', syn:'Synonym Match', ant:'Antonym Match', morph:'Morphology', usage:'Contextual Usage', error:'Error Spotter', mixed:'Mixed Mode' }[ctype] || '';
+
+  document.getElementById('quizShell').innerHTML = `
+    <div style="display:flex;flex-direction:column;height:100%">
+      <div class="qp-progress">
+        <button class="qs-close" onclick="renderQSetupBack()" style="width:30px;height:30px;flex-shrink:0">‹</button>
+        <div class="qp-bar-wrap">
+          <div class="qp-bar"><div class="qp-fill" style="width:${pct}%"></div></div>
+          <div class="qp-txt">${QZ.idx+1} of ${tot}</div>
+        </div>
+        <div class="qp-score">${QZ.score} ✓</div>
+      </div>
+      <div class="qp-body">
+        <div class="qp-type-lbl">${lbl}</div>
+        <div class="qp-card" id="qpCard">
+          <div class="qp-word${isBn?' bn':isDef?' df':''}">${prompt}</div>
+          ${hint ? `<div class="qp-hint">${hint}</div>` : ''}
+          ${isWord && D.meta?.ttsEnabled!==false ? `<button class="qp-tts" onclick="spkWord('${w.word}')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>` : ''}
+        </div>
+        <div id="qpRevealArea">
+          <button class="qp-reveal" onclick="revealQ()">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            Reveal Answer
+          </button>
+        </div>
+      </div>
+    </div>`;
+}
+
+function revealQ() {
+  const w = QZ.queue[QZ.idx];
+  const ct = QZ.ctype;
+  QZ.revealed = true;
+  let main = '', sub = '';
+  if (ct === 'en2bn') { main = w.bangla; sub = w.academicDefinition||w.denotation||''; }
+  else if (ct === 'bn2en') { main = w.word; sub = w.pronunciation ? w.pronunciation + ' · ' + (w.academicDefinition||'').slice(0,80)+'…' : ''; }
+  else if (ct === 'def2en') { main = w.word; sub = w.bangla; }
+  else if (ct === 'col2en') { main = (w.collocations||[])[0]||w.word; sub = ''; }
+  else if (ct === 'usage') { main = w.word; sub = w.usageInLesson?.explanation||''; }
+  else if (ct === 'syn') { main = (w.lexicalRelations?.synonyms||[])[0]||'—'; sub = ''; }
+  else if (ct === 'ant') { main = (w.lexicalRelations?.antonyms||[])[0]||'—'; sub = ''; }
+  else if (ct === 'morph') { main = (w.morphology?.derivatives||[])[0]||w.word; sub = ''; }
+  else if (ct === 'error') { main = (w.commonErrors||[])[0]?.explanation||w.word; sub = ''; sub = ''; }
+  const isBn = ct === 'en2bn';
+
+  if (ct === 'bn2en' || ct === 'def2en' || ct === 'usage') {
+    setTimeout(() => { try { const u=new SpeechSynthesisUtterance(w.word);u.lang='en-US';u.rate=.85;window.speechSynthesis?.speak(u); } catch(e){} }, 300);
+  }
+
+  document.getElementById('qpRevealArea').innerHTML = `
+    <div class="qp-answer">
+      <div class="qa-main${isBn?' bn':''}">${main}</div>
+      ${sub ? `<div class="qa-sub">${sub}</div>` : ''}
+    </div>
+    <div class="qp-judge">
+      <button class="qjb wrong" onclick="judgeQ(false)">✗ Got it Wrong</button>
+      <button class="qjb right" onclick="judgeQ(true)">✓ Got it Right</button>
+    </div>`;
+}
+
+function judgeQ(ok) {
+  const w = QZ.queue[QZ.idx];
+  if (ok) QZ.score++;
+  else QZ.missed.push(w);
+  const card = document.getElementById('qpCard');
+  if (card) {
+    card.style.borderColor = ok ? 'rgba(63,185,80,.5)' : 'rgba(248,81,73,.5)';
+    card.style.background = ok ? 'rgba(63,185,80,.04)' : 'rgba(248,81,73,.04)';
+  }
+  setTimeout(() => { QZ.idx++; renderQPlay(); }, 500);
+}
+
+function spkWord(word) {
+  if (!window.speechSynthesis) return;
   window.speechSynthesis.cancel();
-  const utt=new SpeechSynthesisUtterance(w.word);
-  utt.lang='en-US';utt.rate=0.88;
-  const voices=window.speechSynthesis.getVoices();
-  const eng=voices.find(v=>v.lang.startsWith('en')&&v.localService)||voices.find(v=>v.lang.startsWith('en'));
-  if(eng)utt.voice=eng;
-  window.speechSynthesis.speak(utt);
+  const u = new SpeechSynthesisUtterance(word); u.lang = 'en-US'; u.rate = .85;
+  const v = window.speechSynthesis.getVoices().find(x => x.lang.startsWith('en'));
+  if (v) u.voice = v;
+  window.speechSynthesis.speak(u);
 }
-if(window.speechSynthesis)window.speechSynthesis.onvoiceschanged=()=>window.speechSynthesis.getVoices();
 
-// ════════════════════════════════════════
-//  QUIZ
-// ════════════════════════════════════════
-let quizState={queue:[],current:0,score:0,missed:[],count:10,type:'en2bn',currentType:'en2bn'};
-function populateQuizSection(){const sel=document.getElementById('quizSection');sel.innerHTML='<option value="">All Words</option>'+S.sections.map(s=>`<option value="${s.id}">${s.name}</option>`).join('');}
-function openQuiz(){populateQuizSection();showQuizScreen('quizSetup');openModal('quizModal');}
-function showQuizScreen(id){document.querySelectorAll('.quiz-screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');}
-function setQuizCount(n){quizState.count=n;document.querySelectorAll('.qs-count-btn').forEach(b=>{b.classList.toggle('active',parseInt(b.textContent)===n||(b.textContent==='All'&&n===999));});}
-function startQuiz(){
-  const secId=document.getElementById('quizSection').value;
-  const type=document.querySelector('input[name="quizType"]:checked')?.value||'en2bn';
-  let pool=S.words.filter(w=>w.word&&w.bangla&&w.denotation);
-  if(secId)pool=pool.filter(w=>w.sectionId===secId);
-  if(!pool.length){toast('No words available','e');return;}
-  pool=pool.sort(()=>Math.random()-.5);
-  const q=Math.min(quizState.count,pool.length);
-  quizState={queue:pool.slice(0,q),current:0,score:0,missed:[],count:q,type,currentType:type};
-  showQuizScreen('quizPlay');renderQuizQuestion();
-}
-function getQuizType(){if(quizState.type!=='mixed')return quizState.type;return['en2bn','bn2en','def2en'][Math.floor(Math.random()*3)];}
-function renderQuizQuestion(){
-  const{queue,current,score}=quizState;
-  if(current>=queue.length){showQuizResults();return;}
-  const w=queue[current];const total=queue.length;
-  document.getElementById('quizProgressFill').style.width=(current/total*100)+'%';
-  document.getElementById('quizProgressTxt').textContent=`${current+1} / ${total}`;
-  document.getElementById('quizScoreBadge').textContent=`${score} ✓`;
-  const qtype=getQuizType();quizState.currentType=qtype;
-  const labels={en2bn:'English → Bangla',bn2en:'Bangla → English',def2en:'Definition → Word'};
-  document.getElementById('quizTypeLabel').textContent=labels[qtype]||'';
-  const wordEl=document.getElementById('quizWord');
-  wordEl.className='qp-word';
-  if(qtype==='en2bn'){wordEl.textContent=w.word;document.getElementById('quizHint').textContent=w.pronounce||'';document.getElementById('quizTtsBtn').style.display='flex';}
-  else if(qtype==='bn2en'){wordEl.className='qp-word bn';wordEl.textContent=w.bangla;document.getElementById('quizHint').textContent=`POS: ${POS_LABELS[w.pos]||w.pos}`;document.getElementById('quizTtsBtn').style.display='none';}
-  else{wordEl.className='qp-word def';wordEl.textContent=`"${w.denotation}"`;document.getElementById('quizHint').textContent=`POS: ${POS_LABELS[w.pos]||w.pos}`;document.getElementById('quizTtsBtn').style.display='none';}
-  document.getElementById('quizRevealZone').style.display='none';
-  document.getElementById('quizRevealBtn').style.display='flex';
-  document.getElementById('quizCard').style.borderColor='var(--dk-border)';
-  document.getElementById('quizCard').style.background='var(--dk-card)';
-}
-function revealAnswer(){
-  const w=quizState.queue[quizState.current];const qtype=quizState.currentType;
-  let html='';
-  if(qtype==='en2bn'){html=`<div class="qa-main bn">${w.bangla}</div>`;if(w.synonym?.en)html+=`<div class="qa-def">Syn: ${w.synonym.en} · Ant: ${w.antonym?.en||'—'}</div>`;}
-  else if(qtype==='bn2en'){html=`<div class="qa-main">${w.word}</div>`;if(w.pronounce)html+=`<div class="qa-def">${w.pronounce}</div>`;html+=`<div class="qa-def" style="margin-top:5px;font-style:italic">${w.denotation}</div>`;}
-  else{html=`<div class="qa-main">${w.word}</div><div class="qa-def">${w.bangla}</div>${w.pronounce?`<div class="qa-def">${w.pronounce}</div>`:''}`;}
-  document.getElementById('quizAnswerBox').innerHTML=html;
-  document.getElementById('quizRevealBtn').style.display='none';
-  document.getElementById('quizRevealZone').style.display='flex';
-  if(window.speechSynthesis&&(qtype==='bn2en'||qtype==='def2en')){setTimeout(()=>{const utt=new SpeechSynthesisUtterance(w.word);utt.lang='en-US';utt.rate=0.88;window.speechSynthesis.speak(utt);},300);}
-}
-function judgeAnswer(correct){
-  const w=quizState.queue[quizState.current];
-  if(correct){quizState.score++;document.getElementById('quizCard').style.borderColor='rgba(52,199,124,.5)';document.getElementById('quizCard').style.background='rgba(52,199,124,.05)';}
-  else{quizState.missed.push(w);document.getElementById('quizCard').style.borderColor='rgba(240,112,112,.5)';document.getElementById('quizCard').style.background='rgba(240,112,112,.05)';}
-  document.getElementById('quizScoreBadge').textContent=`${quizState.score} ✓`;
-  setTimeout(()=>{quizState.current++;renderQuizQuestion();},500);
-}
-function showQuizResults(){
-  const{queue,score,missed}=quizState;const total=queue.length;const pct=Math.round(score/total*100);
-  const emoji=pct>=90?'🏆':pct>=70?'🎉':pct>=50?'💪':'📚';
-  document.getElementById('quizTrophy').textContent=emoji;
-  document.getElementById('quizResultTitle').textContent=pct>=90?'Outstanding!':pct>=70?'Great Job!':pct>=50?'Good Effort!':'Keep Practicing!';
-  document.getElementById('quizPct').textContent=pct+'%';
-  document.getElementById('quizStats').innerHTML=`<div class="qr-stat"><div class="qr-stat-val g">${score}</div><div class="qr-stat-lbl">Correct</div></div><div class="qr-stat"><div class="qr-stat-val r">${missed.length}</div><div class="qr-stat-lbl">Missed</div></div><div class="qr-stat"><div class="qr-stat-val">${total}</div><div class="qr-stat-lbl">Total</div></div>`;
-  const offset=264-(pct/100)*264;
-  setTimeout(()=>{document.getElementById('quizRingFill').style.strokeDashoffset=offset;},200);
-  if(missed.length>0){document.getElementById('quizMissedSection').style.display='block';document.getElementById('quizMissedList').innerHTML=missed.map(w=>`<span class="qr-missed-chip">${w.word}</span>`).join('');document.getElementById('quizRetryBtn').style.display='inline-flex';}
-  else{document.getElementById('quizMissedSection').style.display='none';document.getElementById('quizRetryBtn').style.display='none';}
-  showQuizScreen('quizResults');
-}
-function retryMissed(){const missed=[...quizState.missed];quizState={...quizState,queue:missed.sort(()=>Math.random()-.5),current:0,score:0,missed:[],count:missed.length};showQuizScreen('quizPlay');renderQuizQuestion();}
-function backToQuizSetup(){window.speechSynthesis?.cancel();showQuizScreen('quizSetup');document.getElementById('quizRingFill').style.strokeDashoffset='264';}
+function renderQResults() {
+  const { queue, score, missed } = QZ;
+  const tot = queue.length, pct = Math.round(score/tot*100);
+  const trophy = pct>=90?'🏆':pct>=70?'🎉':pct>=50?'💪':'📚';
+  const title = pct>=90?'Outstanding!':pct>=70?'Great Work!':pct>=50?'Good Effort!':'Keep Practicing!';
+  const dashOffset = 264 - (pct/100)*264;
 
-// ════════════════════════════════════════
-//  MODAL & TOAST
-// ════════════════════════════════════════
-function openModal(id){document.getElementById(id).classList.add('open');}
-function closeModal(id){document.getElementById(id).classList.remove('open');}
-document.querySelectorAll('.modal-overlay').forEach(bg=>bg.addEventListener('click',e=>{if(e.target===bg)bg.classList.remove('open');}));
-document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal-overlay.open').forEach(m=>m.classList.remove('open'));});
-function toast(msg,type=''){const wrap=document.getElementById('toastWrap');const el=document.createElement('div');el.className='toast '+(type||'');el.textContent=msg;wrap.appendChild(el);setTimeout(()=>{el.style.opacity='0';el.style.transform='translateX(16px)';el.style.transition='all .3s';setTimeout(()=>el.remove(),300);},2800);}
+  document.getElementById('quizShell').innerHTML = `
+    <div class="qs-header">
+      <div class="qs-title">Quiz Complete</div>
+      <button class="qs-close" onclick="closeQuiz()">✕</button>
+    </div>
+    <div class="qr-body">
+      <div class="qr-trophy">${trophy}</div>
+      <div class="qr-title">${title}</div>
+      <div class="qr-ring">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="8"/>
+          <circle cx="50" cy="50" r="42" fill="none" stroke="var(--gold2)" stroke-width="8"
+            stroke-dasharray="264" stroke-dashoffset="${dashOffset}" stroke-linecap="round"
+            transform="rotate(-90 50 50)" style="transition:stroke-dashoffset 1.2s ease"/>
+        </svg>
+        <div class="qr-ring-text">
+          <div class="qr-pct">${pct}%</div>
+          <div class="qr-pct-lbl">score</div>
+        </div>
+      </div>
+      <div class="qr-stats">
+        <div class="qr-stat"><div class="qr-stat-v g">${score}</div><div class="qr-stat-l">Correct</div></div>
+        <div class="qr-stat"><div class="qr-stat-v r">${missed.length}</div><div class="qr-stat-l">Missed</div></div>
+        <div class="qr-stat"><div class="qr-stat-v">${tot}</div><div class="qr-stat-l">Total</div></div>
+      </div>
+      ${missed.length ? `<div class="qr-missed">
+        <div class="qr-missed-t">Words to Review</div>
+        <div class="qr-missed-list">${missed.map(w=>`<span class="qr-missed-w">${w.word}</span>`).join('')}</div>
+      </div>` : ''}
+      <div class="qr-actions">
+        <button class="qr-btn s" onclick="openQuiz()">New Quiz</button>
+        ${missed.length ? `<button class="qr-btn p" onclick="retryMissed()">Retry Missed</button>` : ''}
+        <button class="qr-btn s" onclick="closeQuiz()">Close</button>
+      </div>
+    </div>`;
+}
 
-// ════════════════════════════════════════
-//  INIT
-// ════════════════════════════════════════
-loadData();
+function retryMissed() {
+  const m = [...QZ.missed];
+  QZ.queue = m.sort(()=>Math.random()-.5); QZ.idx=0; QZ.score=0; QZ.missed=[];
+  renderQPlay();
+}
+
+function renderQSetupBack() {
+  window.speechSynthesis?.cancel();
+  openQuiz();
+}
+
+// ═══════════════════════════════════════════
+// SIDEBAR TOGGLE (MOBILE)
+// ═══════════════════════════════════════════
+function toggleSidebar() {
+  const sb = document.getElementById('sidebar');
+  sidebarOpen = !sidebarOpen;
+  sb.classList.toggle('open', sidebarOpen);
+}
+function closeSidebar() {
+  sidebarOpen = false;
+  document.getElementById('sidebar')?.classList.remove('open');
+}
+document.addEventListener('click', e => {
+  const sb = document.getElementById('sidebar');
+  const hb = document.getElementById('hamburger');
+  if (sb?.classList.contains('open') && !sb.contains(e.target) && !hb?.contains(e.target)) {
+    closeSidebar();
+  }
+});
+
+// ═══════════════════════════════════════════
+// UTILS
+// ═══════════════════════════════════════════
+function showEl(id) { document.getElementById(id).style.display = 'block'; }
+function hide(id) { const el = document.getElementById(id); if(el){el.style.display='none';el.classList?.remove('show');} }
+function setTxt(id, txt) { const el = document.getElementById(id); if(el) el.textContent = txt; }
+
+// Close quiz on overlay click
+document.getElementById('quizModal').addEventListener('click', e => {
+  if (e.target === document.getElementById('quizModal')) closeQuiz();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeQuiz();
+});
+
+// ═══════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════
+boot();
 </script>
 </body>
 </html>
